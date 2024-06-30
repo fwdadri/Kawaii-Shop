@@ -55,6 +55,12 @@
       "Correo": "    ",
       "Nombre": "    ",
       "Contrasena": "   "
+    },
+    {
+      "id": "e9c3",
+      "Correo": "Barryveg12@gmail.com",
+      "Nombre": "barryveg",
+      "Contrasena": "12345678"
     }
   ],
   "productos": [

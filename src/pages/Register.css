@@ -1,3 +1,84 @@
-*{
-    background-color: rgb(245, 171, 234);
+.form{
+    border-radius: 20px;
+    margin-left: 400px;
+    width: 500px;
+    height: 537px;
+    background-color: rgb(210, 13, 13);
+    margin-top: 20px;
+    
 }
+
+.img-register{
+    border-radius: 20px;
+    display: flex;
+    background-color:rgb(255, 255, 255);
+    justify-content: center;
+}
+
+.logo{
+    background-color: rgb(255, 255, 255);
+        margin-top: 30px;
+}
+
+.register-form{
+    background-color: rgb(255, 255, 255);
+    justify-items: center
+}
+
+.tex-register{
+    color: rgb(207, 137, 197);
+    background-color: white; 
+    margin-left: 170px;
+    font-size: 25px;
+}
+
+
+
+.label-register{
+    color: rgb(207, 137, 197);
+    display: flex;
+    margin-left: 240px;
+    background-color: white;
+}
+.input-register{
+    display: flex;
+    margin-left: 132px;
+    height: 30px;
+    width: 250px;
+}
+
+
+.label-register1{
+    color: rgb(207, 137, 197);
+    display: flex;
+    margin-left: 240px;
+    background-color: white;
+}
+
+.label-register2{
+    color: rgb(207, 137, 197);
+    display: flex;
+    margin-left: 242px;
+    background-color: white;
+}
+
+.label-register3{
+    color: rgb(207, 137, 197);
+    display: flex;
+    margin-left: 227px;
+    background-color: white;
+}
+
+.btn-register{
+    margin-left: 210px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10%;
+}
+
+
+.register-link{
+    margin-left: 226px;
+    background-color: white; 
+}
+

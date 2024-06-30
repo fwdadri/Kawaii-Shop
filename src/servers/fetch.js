@@ -68,3 +68,14 @@ export let addProduct = async(Producto, Precio, Descripcion) => {//es necesario 
    console.log(error)
   } 
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+export let getProductos = async () => { //todos los asyn necesitan un await, un try y catch
+  try { 
+    const response = await fetch( "http://localhost:3001/productos"); // obtenido los datos los local host 
+    const data = await response.json(); //esta volviendo el localhost en un jason para poder ser leidos
+    return data
+   
+   } catch (error) { 
+    console.log(error);//que tipo de error atrapa
+   }
+}

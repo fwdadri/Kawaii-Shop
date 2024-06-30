@@ -1,7 +1,78 @@
-*{
-    background-color: rgb(245, 171, 234);
+
+.form{
+    border-radius: 20px;
+    margin-left: 400px;
+    width: 500px;
+    height: 537px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 20px;
+    
+}
+.logo{
+    background-color: rgb(255, 255, 255);
 }
 
-form{
-    background-color: rgb(102, 215, 230);
+.img-login{
+    border-radius: 20px;
+    display: flex;
+    background-color:rgb(255, 255, 255);
+    justify-content: center;
+}
+
+.login-form{
+    background-color: rgb(255, 255, 255);
+    justify-items: center
+}
+
+.input-login {
+    display: flex;
+    margin-left: 132px;
+    height: 30px;
+    width: 250px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(252, 190, 243);
+}
+
+.label-login{
+    color: rgb(207, 137, 197);
+    display: flex;
+    margin-left: 240px;
+    background-color: white;
+}
+
+.label-login1{
+    color: rgb(207, 137, 197);
+    display: flex;
+    margin-left: 240px;
+    background-color: white;
+
+}
+
+.label-login2{
+    color: rgb(207, 137, 197);
+    display: flex;
+    margin-left: 232px;
+    background-color: white;
+        border: none;
+    border-radius: 10px;
+}
+
+.btn-login{
+    margin-left: 210px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10%;
+}
+
+.tex-login{
+    color: rgb(207, 137, 197);
+    background-color: white; 
+    margin-left: 170px;
+    font-size: 25px;
+}
+
+.login-link{
+    margin-left: 216px;
+    background-color: white; 
 }

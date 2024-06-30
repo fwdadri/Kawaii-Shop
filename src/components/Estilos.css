@@ -1,15 +1,37 @@
 .header {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
     background-color: white;
-    color: rgb(0, 0, 0);
+    color: rgb(216, 50, 189);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 160px;
+    margin-top: -10px;
+    margin-left:-8px ;
+    width: 106%;
 }
 
-.logo{
+.admi {
+    background: lightblue;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: -10%;
+    margin-right: 50px;
+}
+.logo2{
     height: 110px;
+    margin-left: 30px;
+    margin-top: 10px;
 }
-
+.nav1{
+    margin-left: 40px;
+    background-color: white;
+}
 .administrar{
     background-color: white;
     font-size: 17px;
@@ -19,21 +41,6 @@
     background-color: white;
     font-size: 17px;
 }
-
-.admi {
-    background: lightblue;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin-top: 5%;
-    margin-left: 25%;
-}
-.salir{
-    width: 100px;
-    height: 50px;
-    border-radius: 10%;
-}
-
 .publicar{
     background-color: white;
     height: 700px;
@@ -43,10 +50,7 @@
     margin-left: 3%;
 
 }
-.fooder{
-    background-color: white;
-    height:150px;
-}
+
 .saludo{
     background-color: white;
 }
@@ -56,6 +60,7 @@
 .Ppublicar{
     background-color: white;
     text-align: center;
+    color: rgb(201, 86, 183);
 }
 .publi_img{
     width: 300px;
@@ -90,5 +95,52 @@
     border-radius: 10px;
     margin-left: 37%;
     margin-top: -740px;
-    background: lightblue;
+    background: white;
+}
+
+.salir{
+margin-bottom: 10px;
+}
+
+.fooder{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background-color: white;
+    height:180px;
+    text-align: center;
+    width: 105%;
+    margin-top: 10px;
+    margin-left:-8px
+    
+}
+
+.fooder2{
+    text-align: center;
+    background-color: white;
+    color: rgb(216, 50, 189);
+}
+
+.fooder-in{
+    background-color: white;
+    margin-top: 16px;
+    color: rgb(216, 50, 189);
+}
+
+.fooder-img{
+    background-color: white;
+height: 20px;
+}
+
+.logo-foo{
+    height: 130px;
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.contacto{
+    background-color: white;
+    margin-left: 103px;
 }
