@@ -29,9 +29,8 @@
     margin-left: 132px;
     height: 30px;
     width: 250px;
-    border: none;
+    border-color: rgb(194, 74, 176);
     border-radius: 10px;
-    background-color: rgb(252, 190, 243);
 }
 
 .label-login{
@@ -54,7 +53,7 @@
     display: flex;
     margin-left: 232px;
     background-color: white;
-        border: none;
+    border: none;
     border-radius: 10px;
 }
 
@@ -63,8 +62,9 @@
     width: 100px;
     height: 40px;
     border-radius: 10%;
+    border-color: rgb(194, 74, 176);
+    color: rgb(194, 74, 176);
 }
-
 .tex-login{
     color: rgb(207, 137, 197);
     background-color: white; 
@@ -75,4 +75,8 @@
 .login-link{
     margin-left: 216px;
     background-color: white; 
+}
+
+.colorrosa{
+   background-color: rgb(222, 164, 210);
 }

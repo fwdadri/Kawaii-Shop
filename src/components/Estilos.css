@@ -31,6 +31,8 @@
 .nav1{
     margin-left: 40px;
     background-color: white;
+    text-decoration: none;
+    color: rgb(216, 50, 189);
 }
 .administrar{
     background-color: white;
@@ -47,8 +49,7 @@
     width: 360px;
     border-radius: 10px;
     padding: 1%;
-    margin-left: 3%;
-
+    margin-left: 6%;
 }
 
 .saludo{
@@ -57,14 +58,12 @@
 .saludoadmi{
     background-color: white;
 }
-.Ppublicar{
+.publicar{
     background-color: white;
     text-align: center;
     color: rgb(201, 86, 183);
 }
 .publi_img{
-    width: 300px;
-    height: 300px;
     margin-left: 9%;
     background: lightblue;
 }
@@ -91,11 +90,12 @@
 
 .productos_publicados{
     width: 750px;
-    height: 720px;
+    height: 700px;
     border-radius: 10px;
-    margin-left: 37%;
-    margin-top: -740px;
+    margin-left: 39%;
+    margin-top: -724px;
     background: white;
+    overflow: scroll;
 }
 
 .salir{
@@ -129,9 +129,20 @@ margin-bottom: 10px;
     color: rgb(216, 50, 189);
 }
 
+.fooder-in-p{
+    background-color: white;
+    margin-left: 100px;
+    text-align: left;
+}
+
+.fooder-in-c{
+    background-color: white;
+    margin-left: 120px;
+}
+
 .fooder-img{
     background-color: white;
-height: 20px;
+    height: 20px;
 }
 
 .logo-foo{
@@ -143,4 +154,78 @@ height: 20px;
 .contacto{
     background-color: white;
     margin-left: 103px;
+}
+
+.publicados{
+    background-color: white;
+    text-align: center;
+    color: rgb(216, 50, 189);
+}
+
+.Carrusel{
+    /* z-index: -1;
+    margin-top: -5%; */
+    height: 520px;
+    width: 90%;
+    margin-left: 8%;
+}
+
+.CorruselItems{
+    height: 500px;
+}
+
+/*.Carousel.indicators{
+    display: block;
+    visibility: hidden;
+
+}*/
+
+.d-block{
+   width: 100%;
+   height: 520px;
+   object-fit: cover;
+}
+
+.Carousel.indicators{
+    background-color: none;
+}
+
+
+
+.bbb{
+    background-color: white;
+    text-align: center;
+}
+
+.card-body{
+    background-color: white;
+}
+
+.cuadroo{
+    display: flex;
+    justify-content: center;
+    background: white;
+}
+
+.card{
+    margin-left: 10px;
+
+}
+
+.father{
+    display: flex;
+    margin: 20px;
+    background: white;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background-color: white;
+    /*margin-top: -300px;*/
+}
+
+.cards{
+    margin-top: 320px;
 }

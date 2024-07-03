@@ -1,91 +1,126 @@
 import '../components/Estilos.css'
-//import {useState} from 'react'
-//import { addProduct, getProductos } from '../servers/fetch';
+import {useEffect, useState} from 'react'
+import { addProduct} from '../servers/fetch';
+import { getProductos}  from '../servers/fetch';
+import {deleteProducto} from '../servers/fetch'
+import { editarProduco } from '../servers/fetch';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 
 
 const Body= () => {//funcion flecha para indicar que es una funcion
+//funcion flecha para indicar que es una funcion
+      const [Imagen, setImagen]= useState()
+      const [Nombre, setNombre]= useState();//se esta definiendo el valor gmail
+      const [Precio, setPrecio]= useState();//useState permite manipular los estados de las variables
+      const [Descripcion, setDescripcion]= useState()
+ 
+      //el usuario iniciar se setea sin nada
+      const [Productos, setProductos] = useState([])
+      //se define el estado de la variable
+      //const boton = function boton(){//porque se puse async? es assyncronica?no lo es  y se quito el async porque ya se esta usando en post data
+       // addUsuario(Gmail, Usuario, Password)
+       // alert("registro exitoso")
+      //}
+      function subir() {
+  
+          if (Imagen == null &&Nombre== null && Precio == null && Descripcion == null) { // null puede incluir unun espacio vacio
 
-  /*
-    const [Producto, setProducto]= useState();//se esta definiendo el valor gmail
-    const [Precio, setPrecio]= useState();//useState permite manipular los estados de las variables
-    const [Descripcion, setDescripcion]= useState()//el usuario iniciar se setea sin nada
-    //se define el estado de la variable
-    //const boton = function boton(){//porque se puse async? es assyncronica?no lo es  y se quito el async porque ya se esta usando en post data
-     // addUsuario(Gmail, Usuario, Password)
-     // alert("registro exitoso")
-    //}
-    function subir() {
+             alert("Complete los espacios vacios")
 
-        if (Producto == null && Precio == null && Descripcion == null) { // null puede incluir unun espacio vacio
-           alert("Complete los espacios vacios")
-        }else{
-            alert("Puclicacion exitosa")
-            addProduct(Producto, Precio, Descripcion)
-            setDescripcion('')
-            setPrecio('')//forma correcta de vaciar inputs
-            setProducto('')
-         }
-       }   
+          }else{
+              alert("Publicacion exitosa")
+              addProduct(Imagen, Nombre, Precio, Descripcion)
+              
+              setDescripcion('')
+              setPrecio('')//forma correcta de vaciar inputs
+              setNombre('')
+          }
+      }  
+      
+      useEffect(() => {// un use efect no puede ir dentro/ declarados dentro de funciones
 
-    async function visualizacion(){//funcion para vizualizar datos obtenidos de gettask en la pagina
+       const mer = async () => {
+       const data = await getProductos();
+       setProductos(data) 
+    
+        }
+       mer()
 
-      const data = await getProductos()//el await es para esperar que se ejecute la funcion anterior
-    
-      if (data.length === 0 ){// si los dato son 0 muetra e inserta un parrafo en la hoja html
-        
-        let p =document.createElement("p");
-        p.id ="nothing" 
-        p.innerHTML= "No existen tareas" ;
-        container.appendChild(p); //se inserto la p anterior// div conteiner ya esta definido en html
-      } 
-        
-      for (let i = 0; i < data.length; i++) {//por cada dao agregado al local host se crea una etiqueta
-        
-        let p =document.createElement("p")
-        let div = document.createElement("div");
-        let input = document.createElement("input");//se refiere al checkbox
-        let trash = document.createElement("img");
-        let cantidad = document.getElementById("contador");//cantidad == a contador
-    
-        p.innerHTML=data[i].task
-    
-        div.id= "cuadros";
-        input.type= "checkbox";//aqui estamos indicndo que el input es un checkbox
-        input.id= "check";
-        trash.id= "trash";
-        trash.src = "http://localhost:1234/borrar.34139a88.png"; //se inserto la src de la pagina wed
-        p.id= "list";
-    
-        container.appendChild(div);
-        div.appendChild(input);
-        div.appendChild(p);
-        div.appendChild(trash);
+      }, []);//evita que caiga en un bucle infinito
+
+      console.log(Productos)
+
+
+
+      function eliminar() {
+
+        deleteProducto()
+
+        console.log("eliminando") //aqui se visualiza en console el task que se esta eliminando al hacer click
+
+      window.location.reload() 
+
       }
 
-      */
+
+      function editar() {
+        editarProduco()
+
+      }
+
+
 
     return(  
      <>
     <br />
     <br />
-    <div className='publicar'>
+      <div className='publicar'>
       <p className='Ppublicar'>Publicar Producto</p>
-      <div className='publi_img'></div>
+
+      <input className='input_body' type='img' placeholder='img' value={Imagen} onChange={(e) => setImagen (e.target.value.trim())}></input>
       <br /><br />
-      <input className='input_body' type="Nombre" placeholder='Nombre' />
+
+      <input className='input_body' type="Nombre" placeholder='Nombre' value={Nombre} onChange={(e) => setNombre (e.target.value.trim())}/>
       <br /><br />
-      <input className='input_body' type="Precio" placeholder='Precio' />
+
+      <input className='input_body' type="Precio" placeholder='Precio' value={Precio} onChange={(e) => setPrecio (e.target.value.trim())}/>
       <br /><br />
-      <textarea className='input_body_descripcion' name="comentarios" rows="10" cols="40"placeholder='Descripcion' />
+      
+      <input className='input_body_descripcion' type="Descripcion" placeholder='Descripcion' value={Descripcion} onChange={(e) => setDescripcion (e.target.value.trim())}/>
       <br /><br />
-      <button className='btn_body' >Subir Producto</button>
+      <button className='btn_body' onClick={subir}>Subir Producto</button>
     </div>
     <br />
-     <div className='productos_publicados'>
 
+     <div className='productos_publicados'>
+     <div className='grid'>
+      {Productos.map((producto, index) => (
+          <div className='cuadroo' key={index}>
+            <div className='father'>
+              <Card className='cards' style={{ width: '15rem', height: '10rem'}} >
+                <Card.Img variant="top" src={producto.Imagen} />
+                <Card.Body className='card-body'>
+                  <Card.Title > <div className='bbb'>{producto.Producto}</div></Card.Title>
+                  <Card.Text>
+                      <div className='bbb' >{producto.Precio}</div>
+                      <Card.Text>
+                      <div className='bbb' >{producto.Descripcion}</div>
+                  </Card.Text>
+                  </Card.Text>
+                  <Button variant="primary" onClick={editar}>editar</Button>◦◦◦◦◦◦  
+                  <Button variant="primary" id='btnEli'  onClick={eliminar}>Eliminar</Button>
+                </Card.Body >
+              </Card>
+            </div>
+        </div>
+      ))}
+      
      </div>
+     </div>
+      
      <br />
-    <br />
     </> 
     )}
   

@@ -30,7 +30,9 @@ const Login = () => {
           alert("Iniciando seccion")
           navigate("/home")
           
-        } 
+        } else{
+          alert("contraseña o gmail incorrcto")
+        }
 
       }else{
        alert("usuario no registrado")

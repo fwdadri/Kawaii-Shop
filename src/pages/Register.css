@@ -5,8 +5,8 @@
     height: 537px;
     background-color: rgb(210, 13, 13);
     margin-top: 20px;
-    
 }
+
 
 .img-register{
     border-radius: 20px;
@@ -17,12 +17,13 @@
 
 .logo{
     background-color: rgb(255, 255, 255);
-        margin-top: 30px;
+    margin-top: 30px;
 }
 
 .register-form{
     background-color: rgb(255, 255, 255);
-    justify-items: center
+    justify-items: center;
+    border-radius: 20px;
 }
 
 .tex-register{
@@ -45,6 +46,8 @@
     margin-left: 132px;
     height: 30px;
     width: 250px;
+    border-color: rgb(194, 74, 176);
+    border-radius: 10px;
 }
 
 
@@ -74,6 +77,8 @@
     width: 100px;
     height: 40px;
     border-radius: 10%;
+    border-color: rgb(194, 74, 176);
+    color: rgb(194, 74, 176);
 }
 
 
@@ -81,4 +86,3 @@
     margin-left: 226px;
     background-color: white; 
 }
-

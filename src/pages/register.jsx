@@ -70,14 +70,15 @@ const Register = () => {
 
  <label className='label-register3' htmlFor="">Password</label>
  <input type={"text"} className='input-register' value={Password} onChange={(e) => setPassword (e.target.value.trim())} placeholder={'password'} />
- <br /><br />
+ <br />
  
  <button className='btn-register' type='submit'>Crear Cuenta</button>
-  <br />
- <Link className='register-link' to="/">Ir a cuenta</Link>
 
+ <Link className='register-link' to="/">Ir a cuenta</Link>
+<br /><br /><br /><br />
 </form>
 </div>
+<br /><br /><br />
     </div>
        
 

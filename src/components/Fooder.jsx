@@ -14,10 +14,10 @@ const  Footer= () => {//funcion flecha para indicar que es una funcion
 
           <div className='fooder-in'>
             
-            <p className='fooder-in'>Contactanos</p>
-            <p className='fooder-in'><img src={what} alt="" className='fooder-img' />   84280351</p>
-            <p className='fooder-in'><img src={ins} alt="" className='fooder-img' />  Kawai_iGift_Shop</p>
-            <p className='fooder-in'> <img src={google} alt="" className='fooder-img' />  KawaiiGiftShop@gmail.com</p>
+            <p className='fooder-in-c'>Contactanos</p>
+            <p className='fooder-in-p'><img src={what} alt="" className='fooder-img' />   84280351</p>
+            <p className='fooder-in-p'><img src={ins} alt="" className='fooder-img' />  Kawai_iGift_Shop</p>
+            <p className='fooder-in-p'> <img src={google} alt="" className='fooder-img' />  KawaiiGiftShop@gmail.com</p>
         
           </div>
 
