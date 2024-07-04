@@ -71,6 +71,7 @@ const Login = () => {
 
     </form>
     </div>
+    <style>{'body { background-color: rgb(222, 164, 210);}'}</style>
     </body>
     
   )

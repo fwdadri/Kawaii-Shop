@@ -65,42 +65,11 @@
   ],
   "productos": [
     {
-      "id": "6036",
-      "Imagen": "https://i.pinimg.com/originals/e8/c2/78/e8c27807148fefc749fd517f98ea8b7f.jpg",
-      "Producto": "Taza Kuromi",
-      "Precio": "10000",
-      "Descripcion": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    },
-    {
-      "id": "f39d",
-      "Imagen": "https://i.pinimg.com/originals/8a/be/76/8abe761982c1ed5b4f4c026ad898f8c3.jpg",
-      "Producto": "Funko Kuromi",
-      "Precio": "12000",
-      "Descripcion": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    },
-    {
       "id": "65db",
       "Imagen": "https://i.pinimg.com/originals/a1/66/7e/a1667ee0f3b08e61d44a1e3499825555.jpg",
       "Producto": "Funko ShortCake",
       "Precio": "12000",
       "Descripcion": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    },
-    {
-      "id": "3c0d",
-      "Imagen": "https://i.pinimg.com/originals/b4/0c/3d/b40c3d6c32f1d90a4b3cf1367fbf368e.jpg",
-      "Producto": "Peluche Kuromi",
-      "Precio": "15000",
-      "Descripcion": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    },
-    {
-      "id": "c572",
-      "Imagen": "https://i.pinimg.com/originals/5b/ed/fb/5bedfb3a8227cca3e09cca69c6d37136.jpg",
-      "Producto": "Peluche Kuromi Guardada",
-      "Precio": "15000",
-      "Descripcion": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    },
-    {
-      "id": "03a3"
     }
   ]
 }

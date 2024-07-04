@@ -80,43 +80,42 @@ export let getProductos = async () => { //todos los asyn necesitan un await, un 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export let deleteProducto  = async (id) => {//tengo que adaptar la funcion a react y (pasar el parametro del id para ue funcion)?
-    try { 
-      const response = await fetch( "http://localhost:3001/productos" + id ,  { // obtenido los datos los local host 
-      method: 'DELETE',//post empuja/guarda/inserta el contenido
-      headers: {//muestra el tipo de contenido que se guarda
-      'Content-Type': 'application/json'
-     },//esta volviendo el localhost en un jason para poder ser leidos
-     body: JSON.stringify({// convesion de todo a un string  //body se refiere a todo el contenido      
-  })
+  try { 
+    const response = await fetch( "http://localhost:3001/productos/" + id ,  { // obtenido los datos los local host 
+    method: 'DELETE',//post empuja/guarda/inserta el contenido
+    headers: {//muestra el tipo de contenido que se guarda
+    'Content-Type': 'application/json'
+   },//esta volviendo el localhost en un jason para poder ser leidos
+   body: JSON.stringify({// convesion de todo a un string  //body se refiere a todo el contenido      
+})
 });
-  const data = await response.json(); //esperando a que se realice la funcion de conversion anterior   
-         
-  console.log(data)
-  
-  } catch(error) {   
+const data = await response.json(); //esperando a que se realice la funcion de conversion anterior   
+       
+console.log(data)
 
-   console.log(error) 
+} catch(error) {   
 
-  } 
+ console.log(error) 
+
+} 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-export let editarProducto = async () =>{//dos parametros 
-  try{
-    const response = await fetch ("http://localhost:3001/productos/", {//aqui el id identifica cual es que se quiere cambiar
-    method: 'PUT',
-    headers: { 
-      'Content-type': 'application/json'
-    },
-    
-    body: JSON.stringify({// convesion de todo a un string  //body se refiere a todo el contenido//muetra en el api las tareas que ya eatn marcadas
+export let editarProduco = async () =>{//dos parametros 
+try{
+  const response = await fetch ("http://localhost:3001/productos", {//aqui el id identifica cual es que se quiere cambiar
+  method: 'PUT',
+  headers: { 
+    'Content-type': 'application/json'
+  },
+  
+  body: JSON.stringify({// convesion de todo a un string  //body se refiere a todo el contenido//muetra en el api las tareas que ya eatn marcadas
 
-    })
-  });
-  const data = await response.json(); //esperando a que se realice la funcion de conversion anterior          
-   console.log(data)
-  } catch(error) {
-             
-   console.log(error)
-  } 
+  })
+});
+const data = await response.json(); //esperando a que se realice la funcion de conversion anterior          
+ console.log(data)
+} catch(error) {
+           
+ console.log(error)
+} 
 }
-export default editarProducto

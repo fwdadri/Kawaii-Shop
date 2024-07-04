@@ -79,6 +79,7 @@ const Register = () => {
 </form>
 </div>
 <br /><br /><br />
+<style>{'body { background-color: rgb(222, 164, 210);}'}</style>
     </div>
        
 
