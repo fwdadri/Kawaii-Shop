@@ -100,7 +100,7 @@ export let deleteProducto  = async (id) => {//tengo que adaptar la funcion a rea
   } 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-export let editarProduco = async () =>{//dos parametros 
+export let editarProducto = async () =>{//dos parametros 
   try{
     const response = await fetch ("http://localhost:3001/productos", {//aqui el id identifica cual es que se quiere cambiar
     method: 'PUT',
