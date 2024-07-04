@@ -89,13 +89,15 @@ export let deleteProducto  = async (id) => {//tengo que adaptar la funcion a rea
      body: JSON.stringify({// convesion de todo a un string  //body se refiere a todo el contenido      
   })
 });
-  const data = await response.json(); //esperando a que se realice la funcion de conversion anterior          
-
+  const data = await response.json(); //esperando a que se realice la funcion de conversion anterior   
+         
   console.log(data)
-  } catch(error) {            
-   console.log(error)
-  } 
+  
+  } catch(error) {   
 
+   console.log(error) 
+
+  } 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export let editarProduco = async () =>{//dos parametros 
