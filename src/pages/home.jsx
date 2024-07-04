@@ -8,7 +8,7 @@ const  Home= () => {//funcion flecha para indicar que es una funcion
     return(   
       <>
         <Header/>
-        <Body/>       
+        <Body/>    
         <Fooder/>
       </>
   )

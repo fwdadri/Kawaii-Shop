@@ -81,7 +81,7 @@ export let getProductos = async () => { //todos los asyn necesitan un await, un 
 
 export let deleteProducto  = async (id) => {//tengo que adaptar la funcion a react y (pasar el parametro del id para ue funcion)?
     try { 
-      const response = await fetch( "http://localhost:3001/productos/" + id ,  { // obtenido los datos los local host 
+      const response = await fetch( "http://localhost:3001/productos" + id ,  { // obtenido los datos los local host 
       method: 'DELETE',//post empuja/guarda/inserta el contenido
       headers: {//muestra el tipo de contenido que se guarda
       'Content-Type': 'application/json'
@@ -102,7 +102,7 @@ export let deleteProducto  = async (id) => {//tengo que adaptar la funcion a rea
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export let editarProducto = async () =>{//dos parametros 
   try{
-    const response = await fetch ("http://localhost:3001/productos", {//aqui el id identifica cual es que se quiere cambiar
+    const response = await fetch ("http://localhost:3001/productos/", {//aqui el id identifica cual es que se quiere cambiar
     method: 'PUT',
     headers: { 
       'Content-type': 'application/json'
@@ -119,3 +119,4 @@ export let editarProducto = async () =>{//dos parametros
    console.log(error)
   } 
 }
+export default editarProducto

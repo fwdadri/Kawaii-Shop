@@ -223,9 +223,18 @@ margin-bottom: 10px;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     background-color: white;
-    margin-top: -300px;
+    margin-top: -180px;
 }
 
 .cards{
-    margin-top: 320px;
+    margin-top: 200px;
+}
+
+.card-img-top{
+    height: 160px;
+    width: 5%;
+}
+
+.redondo{
+    border-radius: 50%;
 }

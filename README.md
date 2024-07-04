@@ -9,54 +9,36 @@ Currently, two official plugins are available:
 
 
 
+    const editarProducto = async () => {
 
+    if (!nombre.trim() || !descripcion.trim() || !precio.trim()) return; EDITADO  
 
-      const [Imagen, setImagen]= useState()
-      const [Nombre, setNombre]= useState();//se esta definiendo el valor gmail
-      const [Precio, setPrecio]= useState();//useState permite manipular los estados de las variables
-      const [Descripcion, setDescripcion]= useState()
- 
-      //el usuario iniciar se setea sin nada
-      const [Productos, setProductos] = useState([])
-      //se define el estado de la variable
-      //const boton = function boton(){//porque se puse async? es assyncronica?no lo es  y se quito el async porque ya se esta usando en post data
-       // addUsuario(Gmail, Usuario, Password)
-       // alert("registro exitoso")
-      //}
-      let subir = async() => {
-  
-          if (Imagen == null &&Nombre== null && Precio == null && Descripcion == null) { // null puede incluir unun espacio vacio
+    try {
+      const productoEditado = { nombre, descripcion, precio };
+      await ProductsPUT(idEditando, productoEditado);
+      obtenerProductos();
+      setNombre('');
+      setDescripcion('');
+      setPrecio('');
+      setModoEdicion(false);
+      setIdEditando(null);
+    } catch (error) {
 
-             alert("Complete los espacios vacios")
-
-          }   alert("Publicacion exitosa")
-              await addProduct(Imagen, Nombre, Precio, Descripcion)
-              
-              setImagen('')
-              setDescripcion('')
-              setPrecio('')//forma correcta de vaciar inputs
-              setNombre('')
-              setCategoria('')
-              setUpdate(update+1)//el mas 1 actualiza el state
-
-          }
-          useEffect(() => {// un use efect no puede ir dentro/ declarados dentro de funciones
-
-            const mer = async () => {
-              const data = await getProductos();
-               setProductos(data)
-             }
-            mer() //una vez subido el codigo  se actualiza el estado con el update par que se muestre de una vez
-           }, [update]);
-
-
-
-
-                 useEffect(() => {// un use efect no puede ir dentro/ declarados dentro de funciones
-
-       const mer = async () => {
-         const data = await getProductos();
-          setProductos(data)
-        }
-       mer() //una vez subido el codigo  se actualiza el estado con el update par que se muestre de una vez
-      }, [update]);
+      console.error('Error al editar producto:', error);
+    }
+  };
+  const handleAgregarEditar = (e) => {
+    e.preventDefault();
+    if (modoEdicion) {
+      editarProducto();
+    } else {
+      agregarProducto();
+    }
+  };
+  const handleEditar = (producto) => {
+    setNombre(producto.nombre);
+    setDescripcion(producto.descripcion);
+    setPrecio(producto.precio);
+    setModoEdicion(true);
+    setIdEditando(producto.id);
+  };

@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react'
 import { addProduct, editarProducto} from '../servers/fetch';
 import { getProductos}  from '../servers/fetch';
 import {deleteProducto} from '../servers/fetch'
+
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
@@ -15,10 +16,11 @@ const Body= () => {//funcion flecha para indicar que es una funcion
       const [Precio, setPrecio]= useState('');//useState permite manipular los estados de las variables
       const [Descripcion, setDescripcion]= useState('')
       const [update, setUpdate]= useState(0)//para que se actualice una vez subido el producto// solo con el uno se vuelve a cargar todooo
-      
- 
-      //el usuario iniciar se setea sin nada
-      const [Productos, setProductos] = useState([])
+     
+      const [Productos, setProductos] = useState([]) //el usuario iniciar se setea sin nada
+      const [modoEdicion , setModoEdicion] =useState(false);
+      const[idEditando,setIdEditando] = useState(null)
+
       //se define el estado de la variable
       //const boton = function boton(){//porque se puse async? es assyncronica?no lo es  y se quito el async porque ya se esta usando en post data
        // addUsuario(Gmail, Usuario, Password)
@@ -79,48 +81,48 @@ const Body= () => {//funcion flecha para indicar que es una funcion
 
       ////EDITAR/////////////////////////////////////////////////////////////////////////////////////////////7
        const editar = async () => {
+
         if (!Imagen.trim() ||!Nombre.trim() || !Descripcion.trim() || !Precio.trim()) return;
 
         try {
-          const productoEditado = {Imagen, Nombre, Descripcion, Precio };
-          await editarProducto();//khe
-          getProductos();
+          const productoEditado = {Imagen, Nombre, Descripcion, Precio };//donde va usado producto editado
+          await editarProducto(idEditando, productoEditado);//khe ProductsPUT
+
+          getProductos();//obtenerProductos
 
           setNombre('');
           setDescripcion('');
           setPrecio('');
           
-          setModoEdicion(false); // khe
-          setIdEditando(null);//khe
+          setModoEdicion(false); // khe donde van
+          setIdEditando(null);//khe donde van
 
         } catch (error) {
           console.error('Error al editar producto:', error);
         }
       };
 
-      const handleAgregarEditar = (e) => {//khe, el agregar ya lo tengo
-
+      const handleAgregarEditar = (e) => {//khe, el agregar ya lo tengo, y donde se supone que va usado
         e.preventDefault();
 
-        if (modoEdicion) {//khe
-
+        if (modoEdicion) {//khe, de donde salio modoEdicion
           editarProducto();
 
         } else {
-
           setProductos();
         }
       };
 
-      const handleEditar = (producto) => {
+      const handleEditar = (producto) => {//donde va 
 
+        setImagen(producto.nombre);
         setNombre(producto.nombre);
         setDescripcion(producto.descripcion);
         setPrecio(producto.precio);
 
-        setModoEdicion(true);
+        setModoEdicion(true); //aun sigo sin saber
         
-        setIdEditando(producto.id);
+        setIdEditando(producto.id); //y donde vaaaa
 
       };
       //////////////////////////////////////////////////////////////////////////////////////////
@@ -134,6 +136,8 @@ const Body= () => {//funcion flecha para indicar que es una funcion
     <br />
       <div className='publicar'>
       <p className='Ppublicar'>Publicar Producto</p>
+      <form onSubmit={handleAgregarEditar}>
+
 
       <input className='input_body' type='img' placeholder='img' value={Imagen} onChange={(e) => setImagen (e.target.value.trim())}></input>
       <br /><br />
@@ -147,8 +151,31 @@ const Body= () => {//funcion flecha para indicar que es una funcion
       <input className='input_body_descripcion' type="Descripcion" placeholder='Descripcion' value={Descripcion} onChange={(e) => setDescripcion (e.target.value.trim())}/>
       <br /><br />
       <button className='btn_body' onClick={()=> subir(Imagen, Nombre, Precio, Descripcion)}>Subir Producto</button>
+
+      <br />
+      <br />
+
+      <p className='Ppublicar'>Editar Producto</p>
+      
+
+      <input className='input_body' type='img' placeholder='img' value={Imagen} onChange={(e) => setImagen (e.target.value.trim())}></input>
+      <br /><br />
+
+      <input className='input_body' type="Nombre" placeholder='Nombre' value={Nombre} onChange={(e) => setNombre (e.target.value.trim())}/>
+      <br /><br />
+
+      <input className='input_body' type="Precio" placeholder='Precio' value={Precio} onChange={(e) => setPrecio (e.target.value.trim())}/>
+      <br /><br />
+      
+      <input className='input_body_descripcion' type="Descripcion" placeholder='Descripcion' value={Descripcion} onChange={(e) => setDescripcion (e.target.value.trim())}/>
+      <br /><br />
+      
+     
+      <button className='btn_body' onClick={()=> editar(Imagen, Nombre, Precio, Descripcion)}>Subir Producto</button>
+      </form>
     </div>
     <br />
+
 
      <div className='productos_publicados'>
      <div className='grid'>
@@ -166,7 +193,7 @@ const Body= () => {//funcion flecha para indicar que es una funcion
                       <div className='bbb' >{producto.Descripcion}</div>
                   </Card.Text>
                   </Card.Text>
-                  <Button variant="primary" onClick={editar}>editar </Button>◦◦◦◦◦◦ {/*se vuelve a renderizar con el update+1 */} 
+                  <Button variant="primary" onClick={() =>handleEditar(producto)}>editar </Button>◦◦◦◦◦◦ {/*se vuelve a renderizar con el update+1 */} 
                   <Button variant="primary" id='btnEli' onClick={() => {deleteProducto(producto.id); setUpdate (update +1)}}>Eliminar</Button>
                 </Card.Body >
               </Card>
