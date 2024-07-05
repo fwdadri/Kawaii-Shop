@@ -1,14 +1,15 @@
 import '../components/Estilos.css'
-import {useEffect, useState} from 'react'
-import { addProduct} from '../servers/fetch';
+import {useEffect, useRef, useState} from 'react'
+import { addProduct, editarProducto} from '../servers/fetch';
 import { getProductos}  from '../servers/fetch';
 import {deleteProducto} from '../servers/fetch'
+
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import ModalEdit from './modal/modalEdit';
+import Edit from './modal/edit';
 
 
-
-import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -18,41 +19,40 @@ const Body= () => {//funcion flecha para indicar que es una funcion
       const [Imagen, setImagen]= useState('')//undifine cuando no hay comillas, con comillas es un vacio
       const [Nombre, setNombre]= useState('');//se esta definiendo el valor gmail
       const [Precio, setPrecio]= useState('');//useState permite manipular los estados de las variables
+      const [Categoria, setCategoria]= useState('');
       const [Descripcion, setDescripcion]= useState('')
       const [update, setUpdate]= useState(0)//para que se actualice una vez subido el producto// solo con el uno se vuelve a cargar todooo
-      
-      const [Imagen1, setImagen1]= useState('')//undifine cuando no hay comillas, con comillas es un vacio
-      const [Nombre1, setNombre1]= useState('');//se esta definiendo el valor gmail
-      const [Precio1, setPrecio1]= useState('');//useState permite manipular los estados de las variables
-      const [Descripcion1, setDescripcion1]= useState('')
- 
-      //el usuario iniciar se setea sin nada
       const [Productos, setProductos] = useState([])
-      //se define el estado de la variable
-      //const boton = function boton(){//porque se puse async? es assyncronica?no lo es  y se quito el async porque ya se esta usando en post data
-       // addUsuario(Gmail, Usuario, Password)
-       // alert("registro exitoso")
-      //}
 
-      const [show, setShow] = useState(false);
-      const handleClose = () => setShow(false);
-      const handleShow = () => setShow(true);
+      //const [isEditing, setIsEditing] = useState(false);
+      //const [editingId, setEditingId] = useState(null);
+
+      const refModal = useRef()// y ese use ref khe
+
+      const abrirModal = () =>{
+        refModal.current.showModal()// esta cambiando el showModal a useRef
+
+    }
+
+    console.log(refModal);
+ 
 
       ////VALIDACION PARA SUBIR PRODUCTO///////////////////////////////////////////////////////////////////////////////////
-        const subir = async (imagen, nombre, precio, descripcion) => {
+        const subir = async (imagen, nombre, precio, descripcion, Categoria) => {
   
-          if (imagen ==''|| nombre ==''|| precio =='' || descripcion ==''){ // null puede incluir unun espacio vacio
+          if (imagen ==''|| nombre ==''|| precio =='' || descripcion ==''|| Categoria ==''){ // null puede incluir unun espacio vacio
              alert("Complete los espacios vacios")
 
             }else{
               alert("Publicacion exitosa")
 
-              addProduct(imagen, nombre, precio, descripcion)
+              addProduct(imagen, nombre, precio, descripcion, descripcion)
               
               setImagen('')
               setDescripcion('')
               setPrecio('')//forma correcta de vaciar inputs
               setNombre('')
+              setCategoria('')
 
               setUpdate(update+1)//el mas 1 actualiza el state
             }
@@ -90,20 +90,12 @@ const Body= () => {//funcion flecha para indicar que es una funcion
        }, [update])
 
 
+       const editar = async() =>{
 
-
-      const cargar = (id) =>{
-
-        localStorage.setItem('id',id)
-
-      }
-
-      const editar  = () =>{
-
-        console.log(Imagen1, Nombre1, Precio1, Descripcion1)
- 
+        editarProducto()
+        
        }
-
+      
 
 //funcion flecha porque si, porque es react
 
@@ -123,9 +115,13 @@ const Body= () => {//funcion flecha para indicar que es una funcion
 
       <input className='input_body' type="Precio" placeholder='Precio' value={Precio} onChange={(e) => setPrecio (e.target.value.trim())}/>
       <br /><br />
-      
+
+      <input className='input_body' type="Categoria" placeholder='Categoria' value={Categoria} onChange={(e) => setCategoria (e.target.value.trim())}/>
+      <br /><br /> 
+
       <input className='input_body_descripcion' type="Descripcion" placeholder='Descripcion' value={Descripcion} onChange={(e) => setDescripcion (e.target.value.trim())}/>
       <br /><br />
+
       <button className='btn_body' onClick={()=> subir(Imagen, Nombre, Precio, Descripcion)}>Subir Producto</button>
     </div>
     <br />
@@ -147,44 +143,14 @@ const Body= () => {//funcion flecha para indicar que es una funcion
                       <div className='bbb' >{producto.Descripcion}</div>
                   </Card.Text>
                   </Card.Text>
-                  <Button variant="primary" onClick={cargar(producto.id) }>Edita2r</Button>
+                  <Button variant="primary" onClick={abrirModal}>Editar</Button>
+                  <Edit id={producto.id} nombre={producto.Producto} imagen={producto.Imagen} precio={producto.Precio} descripcion={producto.Descripcion} />
 
                   <Button variant="primary" id='btnEli' onClick={() => {deleteProducto(producto.id); setUpdate (update +1)}}>Eliminar</Button>
                 </Card.Body >
               </Card>
-              <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Editar Producto</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-
-        <label htmlFor="">Cambiar IMG</label>
-          <input type="text"  placeholder='text' onChange={(e) => setImagen1 (e.target.value.trim())}/>
-          <br />
-          <label htmlFor="">Cambiar Nombre</label>
-          <input type="text" placeholder='text'  onChange={(e) => setNombre1 (e.target.value.trim())}/>
-          <br />
-          <label htmlFor="">Cambiar Precio</label>
-          <input type="text" placeholder='text'onChange={(e) => setPrecio1 (e.target.value.trim())}/>
-          <br />
-          <label htmlFor="">Cambiar Descripcion</label>
-          <input type="text" placeholder='descripcion' onChange={(e) => setDescripcion1 (e.target.value.trim())}/>
-
-
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary"   onClick={handleShow }>editar</Button>
-        </Modal.Footer>
-      </Modal>
-            </div>
+        </div>
+        <ModalEdit ref={refModal} id={producto.id} key={producto.id}/>
         </div>
         
       ))}

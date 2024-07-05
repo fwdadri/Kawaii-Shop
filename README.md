@@ -60,3 +60,37 @@ Currently, two official plugins are available:
           <input type="text" placeholder='descripcion' value={Descripcion} onChange={(e) => setDescripcion (e.target.value.trim())}/>
 
               {<Button variant="primary"  onClick={() => cargar(producto.id) }>Editar</Button>}
+
+
+const Productos= () => {
+
+    return(
+        <>
+        
+        </>
+    )
+}
+
+
+
+      //const editar = async () => {
+      //  const producto = { Imagen, Nombre, Precio, Categoria, Descripcion };
+       // try {
+         //   if (isEditing) {
+      
+           //
+               // await editarProducto(producto.id,producto);
+      
+              //  alert("Producto actualizado con éxito");
+      
+            //
+               // alert("Producto agregado con éxito");
+            //}
+           // editarProducto();// que es fetchproducts
+      
+            //deleteProducto();
+      
+        //} catch (error) {
+         //   console.error("Error al enviar los datos:", error);
+        //}
+      //};

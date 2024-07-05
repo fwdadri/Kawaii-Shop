@@ -65,25 +65,18 @@
   ],
   "productos": [
     {
-      "id": "95a8",
-      "Imagen": "yhf",
-      "Producto": "gjhfj",
-      "Precio": "gjgjhg",
-      "Descripcion": "ffhfhf"
-    },
-    {
-      "id": "4928",
-      "Imagen": "eeeeeeeeeeee",
-      "Producto": "aaaaaaaaaaaaaaaaaaaaaaa",
-      "Precio": "aaaaaaaaaaaaaaaaaa",
-      "Descripcion": "aaaaaaaaaaaaaaaaaa"
-    },
-    {
       "id": "b76f",
       "Imagen": "wwwwwwwwwwwwww",
       "Producto": "wwwwwwwwwwwww",
       "Precio": "wwwwwwwwwwwwww",
       "Descripcion": "wwwwwwwwwwwwwwwwwwww"
+    },
+    {
+      "id": "3604",
+      "Imagen": "qwertyu",
+      "Producto": "wertyui",
+      "Precio": "qwerty",
+      "Descripcion": "qwertyui"
     }
   ]
 }
