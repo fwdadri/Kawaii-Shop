@@ -42,3 +42,21 @@ Currently, two official plugins are available:
     setModoEdicion(true);
     setIdEditando(producto.id);
   };
+
+
+  "Luckiest Guy", cursive;
+
+
+          <label htmlFor="">Cambiar IMG</label>
+          <input type="text" placeholder='text' value={Imagen} onChange={(e) => setImagen (e.target.value.trim())}/>
+          <br />
+          <label htmlFor="">Cambiar Nombre</label>
+          <input type="text" placeholder='text' value={Nombre} onChange={(e) => setNombre (e.target.value.trim())}/>
+          <br />
+          <label htmlFor="">Cambiar Precio</label>
+          <input type="text" placeholder='text' value={Precio} onChange={(e) => setPrecio (e.target.value.trim())}/>
+          <br />
+          <label htmlFor="">Cambiar Descripcion</label>
+          <input type="text" placeholder='descripcion' value={Descripcion} onChange={(e) => setDescripcion (e.target.value.trim())}/>
+
+              {<Button variant="primary"  onClick={() => cargar(producto.id) }>Editar</Button>}

@@ -100,17 +100,15 @@ console.log(data)
 } 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-export let editarProduco = async () =>{//dos parametros 
+export let editarProducto = async (id) =>{//dos parametros 
 try{
-  const response = await fetch ("http://localhost:3001/productos", {//aqui el id identifica cual es que se quiere cambiar
+  const response = await fetch ("http://localhost:3001/productos/" + id, {//aqui el id identifica cual es que se quiere cambiar
   method: 'PUT',
   headers: { 
     'Content-type': 'application/json'
   },
   
-  body: JSON.stringify({// convesion de todo a un string  //body se refiere a todo el contenido//muetra en el api las tareas que ya eatn marcadas
-
-  })
+  body: JSON.stringify((newData))// convesion de todo a un string  //body se refiere a todo el contenido//muetra en el api las tareas que ya eatn marcadas
 });
 const data = await response.json(); //esperando a que se realice la funcion de conversion anterior          
  console.log(data)
