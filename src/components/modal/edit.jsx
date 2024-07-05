@@ -1,12 +1,14 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { editarProducto } from '../../servers/fetch'
+
 const Edit = ({id, imagen, nombre, precio, descripcion}) => {
 
     const [inputNombre, setInputNombre] = useState(nombre)
     const [inputPrecio, setInputPrecio] = useState(precio)
     const [inputImagen, setInputImagen] = useState(imagen)
     const [inputDescripcion, setInputDescripcion] = useState(descripcion)
- const editRef = useRef()
+    const editRef = useRef()
+
  const btn = useRef()//de donde salio//ok ya entendi de donde salieron esos ref //pero donde esta useref? esta importada
 
  const show = () =>{
@@ -20,6 +22,20 @@ const cerrar = () => {
 
 }
 
+const editar = () => { //funcion de boton de eliminar
+
+   let nuevoProducto = {
+    Imagen: inputImagen,
+    Producto: inputNombre,
+    Precio: inputPrecio,
+    Descripcion: inputDescripcion
+   }
+
+
+    editarProducto(id, nuevoProducto)
+
+
+}
 
   return (
 
@@ -42,7 +58,7 @@ const cerrar = () => {
   <br />
   <br />
   <button onClick={cerrar}>cerrar</button>
-
+  <button onClick={() => editar(id, imagen, nombre, precio, descripcion)} ref={btn} id={id}>Cambiar</button>
     </dialog>
  <button onClick={show} >Edit </button>
     </>

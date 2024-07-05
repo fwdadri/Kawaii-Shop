@@ -1,12 +1,11 @@
 import '../components/Estilos.css'
 import {useEffect, useRef, useState} from 'react'
-import { addProduct, editarProducto} from '../servers/fetch';
+import { addProduct} from '../servers/fetch';
 import { getProductos}  from '../servers/fetch';
 import {deleteProducto} from '../servers/fetch'
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import ModalEdit from './modal/modalEdit';
 import Edit from './modal/edit';
 
 
@@ -29,10 +28,6 @@ const Body= () => {//funcion flecha para indicar que es una funcion
 
       const refModal = useRef()// y ese use ref khe
 
-      const abrirModal = () =>{
-        refModal.current.showModal()// esta cambiando el showModal a useRef
-
-    }
 
     console.log(refModal);
  
@@ -80,8 +75,11 @@ const Body= () => {//funcion flecha para indicar que es una funcion
         const mer = async () => {
  
         const data = await getProductos();//
- 
+
+        
         deleteProducto(data)
+
+     
 
       }
 
@@ -89,13 +87,6 @@ const Body= () => {//funcion flecha para indicar que es una funcion
  
        }, [update])
 
-
-       const editar = async() =>{
-
-        editarProducto()
-        
-       }
-      
 
 //funcion flecha porque si, porque es react
 
@@ -143,14 +134,12 @@ const Body= () => {//funcion flecha para indicar que es una funcion
                       <div className='bbb' >{producto.Descripcion}</div>
                   </Card.Text>
                   </Card.Text>
-                  <Button variant="primary" onClick={abrirModal}>Editar</Button>
                   <Edit id={producto.id} nombre={producto.Producto} imagen={producto.Imagen} precio={producto.Precio} descripcion={producto.Descripcion} />
 
                   <Button variant="primary" id='btnEli' onClick={() => {deleteProducto(producto.id); setUpdate (update +1)}}>Eliminar</Button>
                 </Card.Body >
               </Card>
         </div>
-        <ModalEdit ref={refModal} id={producto.id} key={producto.id}/>
         </div>
         
       ))}

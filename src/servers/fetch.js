@@ -106,15 +106,17 @@ console.log(data)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export let editarProducto = async (id , producto) =>{//dos parametros //le put data
+
   console.log(id, producto)
+
 try{
   const response = await fetch ("http://localhost:3001/productos/" + id, {//aqui el id identifica cual es que se quiere cambiar
 
-  method: 'PUT',
+  method: 'PUT', //es como un post pero se manda el id del que se quiere editar y productos porque asi se llama el endpoint
 
   headers: { 
 
-    'Content-type': 'application/json'//principal problema era que no tiene el id
+    'Content-type': 'application/json'
 
   },
   
@@ -128,7 +130,7 @@ try{
 });
 if (!response.ok) {
 
-  throw new Error(`Error en la solicitud PUT: ${response.statusText}`);
+  throw new Error(`Error en la solicitud PUT: ${response.statusText}`);//que ondas con ese "trow error new"?// preguntarle a Marilyn como funciona ese¨$¨
 
 }
  const data = await response.json();
@@ -140,7 +142,6 @@ if (!response.ok) {
  console.error("Error al actualizar los datos:", error);
 
   throw error;
-
 }
 };
 

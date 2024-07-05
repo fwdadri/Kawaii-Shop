@@ -65,18 +65,26 @@
   ],
   "productos": [
     {
-      "id": "b76f",
-      "Imagen": "wwwwwwwwwwwwww",
-      "Producto": "wwwwwwwwwwwww",
-      "Precio": "wwwwwwwwwwwwww",
-      "Descripcion": "wwwwwwwwwwwwwwwwwwww"
+      "Imagen": "2345",
+      "Producto": "77ygyg",
+      "Precio": "7777",
+      "Descripcion": "lorem",
+      "id": "b76f"
     },
     {
-      "id": "3604",
-      "Imagen": "qwertyu",
-      "Producto": "wertyui",
-      "Precio": "qwerty",
-      "Descripcion": "qwertyui"
+      "Imagen": "xxxxxxxxxxxxxx",
+      "Producto": "xxxxxxxxxxxxxxxxxxxx",
+      "Precio": "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "Descripcion": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "id": "9fde"
+    },
+    {
+      "id": "6158",
+      "Imagen": "dddddddddddddddd",
+      "Producto": "dddddddddddddddddddd",
+      "Precio": "dddddddddddddddddddddddddddd",
+      "Descripcion": "dddddddddddddddddddddd",
+      "Categoria": "dddddddddddddddddddddd"
     }
   ]
 }
