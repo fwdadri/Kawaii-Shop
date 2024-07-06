@@ -8,8 +8,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Edit from './modal/edit';
 
-
-
+import Swal from 'sweetalert2';
 
 
 
@@ -23,12 +22,36 @@ const Body= () => {//funcion flecha para indicar que es una funcion
       const [update, setUpdate]= useState(0)//para que se actualice una vez subido el producto// solo con el uno se vuelve a cargar todooo
       const [Productos, setProductos] = useState([])
 
-      //const [isEditing, setIsEditing] = useState(false);
-      //const [editingId, setEditingId] = useState(null);
-
       const refModal = useRef()// y ese use ref khe
 
+      const [Buscar, setBuscar]= useState('');
 
+      const handleClick = (id) => {//ahora hace la funcion de delete
+        Swal.fire({
+          title: '¿Estás seguro?',
+          text: "¡No podrás revertir esto!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí, eliminarlo!',
+          cancelButtonText: 'No, cancelar!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+
+            deleteProducto(id);
+
+            Swal.fire(
+              '¡Eliminado!',
+              'Tu archivo ha sido eliminado.',
+              'success'
+            );
+          }
+        });
+      };
+
+
+    
     console.log(refModal);
  
 
@@ -68,24 +91,16 @@ const Body= () => {//funcion flecha para indicar que es una funcion
 
       }, [update]);//evita que caiga en un bucle infinito
 
-      ////BORRAR//////////////////////////////////////////////////////////////////////////
+      ////LA FUNCION DELETE ESTA EN UN FETCH//////////////////////////////////////////////////////////////////////////
 
-      useEffect(() => {// un use efect no puede ir dentro/ declarados dentro de funciones
+const filtrando = async()=> {
 
-        const mer = async () => {
- 
-        const data = await getProductos();//
+   const valores = await getProductos()
+   valores.filter(elem=>elem.Producto === Nombre)
+   setBuscar(Buscar)
 
-        
-        deleteProducto(data)
-
-     
-
-      }
-
-        mer() //una vez subido el codigo  se actualiza el estado con el update par que se muestre de una vez
- 
-       }, [update])
+//como renderizar//estudiar proof y 
+}
 
 
 //funcion flecha porque si, porque es react
@@ -97,7 +112,13 @@ const Body= () => {//funcion flecha para indicar que es una funcion
 
       <div className='publicar'>
       <p className='Ppublicar'>Publicar Producto</p>
-
+      <input className='navBuscar' type="text" placeholder='Buscar producto' value={Buscar} onChange={(e) => setBuscar (e.target.value.trim())}/>
+      <button onClick={filtrando}>Buscar</button> 
+      <br />
+      <br />
+      <br />
+      <p className='Ppublicar'>Publicar Producto</p>
+      <br />
       <input className='input_body' type='img' placeholder='img' value={Imagen} onChange={(e) => setImagen (e.target.value.trim())}></input>
       <br /><br />
 
@@ -114,6 +135,8 @@ const Body= () => {//funcion flecha para indicar que es una funcion
       <br /><br />
 
       <button className='btn_body' onClick={()=> subir(Imagen, Nombre, Precio, Descripcion)}>Subir Producto</button>
+   
+
     </div>
     <br />
 
@@ -136,7 +159,7 @@ const Body= () => {//funcion flecha para indicar que es una funcion
                   </Card.Text>
                   <Edit id={producto.id} nombre={producto.Producto} imagen={producto.Imagen} precio={producto.Precio} descripcion={producto.Descripcion} />
 
-                  <Button variant="primary" id='btnEli' onClick={() => {deleteProducto(producto.id); setUpdate (update +1)}}>Eliminar</Button>
+                  <Button variant="primary" id='btnEli' onClick={() => {setUpdate (update +1); handleClick(producto.id)}}>Eliminar</Button>
                 </Card.Body >
               </Card>
         </div>
@@ -145,10 +168,11 @@ const Body= () => {//funcion flecha para indicar que es una funcion
       ))}
   
      </div>
-  
+
      </div>
       
      <br />
+
      <style>{'body { background-color: rgb(222, 164, 210) }'}</style>
     </> 
     )}

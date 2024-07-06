@@ -3,16 +3,17 @@ import { editarProducto } from '../../servers/fetch'
 
 const Edit = ({id, imagen, nombre, precio, descripcion}) => {
 
-    const [inputNombre, setInputNombre] = useState(nombre)
-    const [inputPrecio, setInputPrecio] = useState(precio)
-    const [inputImagen, setInputImagen] = useState(imagen)
-    const [inputDescripcion, setInputDescripcion] = useState(descripcion)
+    const [inputNombre, setInputNombre] = useState(nombre);//pues si resulta que si se puede editar lo que esta entre parentesis
+    const [inputPrecio, setInputPrecio] = useState(precio);
+    const [inputImagen, setInputImagen] = useState(imagen);
+    const [inputDescripcion, setInputDescripcion] = useState(descripcion);
     const editRef = useRef()
 
  const btn = useRef()//de donde salio//ok ya entendi de donde salieron esos ref //pero donde esta useref? esta importada
 
  const show = () =>{
- editRef.current.showModal()
+
+  editRef.current.showModal()
 
 }
 
@@ -25,14 +26,17 @@ const cerrar = () => {
 const editar = () => { //funcion de boton de eliminar
 
    let nuevoProducto = {
+
     Imagen: inputImagen,
-    Producto: inputNombre,
+    Producto: inputNombre,//se creo un cuerpo el cual sera el remplazante
     Precio: inputPrecio,
     Descripcion: inputDescripcion
    }
 
 
     editarProducto(id, nuevoProducto)
+
+    alert ("producto editado")
 
 
 }

@@ -65,26 +65,27 @@
   ],
   "productos": [
     {
-      "Imagen": "2345",
-      "Producto": "77ygyg",
-      "Precio": "7777",
-      "Descripcion": "lorem",
-      "id": "b76f"
+      "Imagen": "mhvjvjhv,jv",
+      "Producto": "waaaaaaaaaaaaaa",
+      "Precio": "vnnvvnb",
+      "Descripcion": "jgjhgjhghkgkhg",
+      "id": "36e6"
     },
     {
-      "Imagen": "xxxxxxxxxxxxxx",
-      "Producto": "xxxxxxxxxxxxxxxxxxxx",
-      "Precio": "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
-      "Descripcion": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-      "id": "9fde"
+      "id": "4169",
+      "Imagen": "nnnn",
+      "Producto": "nnn",
+      "Precio": "nnnn",
+      "Descripcion": "nnnnnnnn",
+      "Categoria": "nnnnnnnn"
     },
     {
-      "id": "6158",
-      "Imagen": "dddddddddddddddd",
-      "Producto": "dddddddddddddddddddd",
-      "Precio": "dddddddddddddddddddddddddddd",
-      "Descripcion": "dddddddddddddddddddddd",
-      "Categoria": "dddddddddddddddddddddd"
+      "id": "550e",
+      "Imagen": "vvvv",
+      "Producto": "vvvv",
+      "Precio": "vvvv",
+      "Descripcion": "vvvvvv",
+      "Categoria": "vvvvvv"
     }
   ]
 }

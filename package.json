@@ -24,6 +24,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
     "sort-by": "^0.0.2",
+    "sweetalert2": "^11.12.2",
     "uuidv4": "^6.2.13"
   },
   "devDependencies": {

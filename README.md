@@ -94,3 +94,24 @@ const Productos= () => {
          //   console.error("Error al enviar los datos:", error);
         //}
       //};
+
+
+      import React from 'react'
+
+function Filtro() {
+
+
+    //para encontrar productos, obtener productos con el get, compararlos con la barra de busqueda
+
+  return (
+    <div className='categoria-filtro'>
+
+        <p>Peluches</p>
+        <p>Tazas</p>
+        <p>medias</p>
+        <p>adornos</p>
+        <p>funkos</p>
+
+    </div>
+  )
+}
