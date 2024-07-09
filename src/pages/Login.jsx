@@ -26,8 +26,8 @@ const Login = () => {
       if (encontrado) {
 
         if (encontrado.Contrasena == Password_input) {
-        
-          alert("Iniciando seccion")
+          sessionStorage.setItem("session", encontrado.id)//aqui se guada el id en el seccion storage
+          // alert("Iniciando seccion")
           navigate("/home")
           
         } else{

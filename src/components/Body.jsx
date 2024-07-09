@@ -4,7 +4,6 @@ import { addProduct} from '../servers/fetch';
 import { getProductos}  from '../servers/fetch';
 import {deleteProducto} from '../servers/fetch'
 
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Edit from './modal/edit';
 
@@ -47,6 +46,9 @@ const Body= () => {//funcion flecha para indicar que es una funcion
             );
           }
         });
+        setTimeout(() => {
+          setUpdate(update+1)
+        }, 500);
       };
  
 ////VALIDACION PARA SUBIR PRODUCTO///////////////////////////////////////////////////////////////////////////////////
@@ -56,7 +58,9 @@ const Body= () => {//funcion flecha para indicar que es una funcion
              alert("Complete los espacios vacios")
 
             }else{
-              alert("Publicacion exitosa")
+              setTimeout(() => {
+                alert("Publicacion exitosa")
+              }, 500);
               console.log(imagen, nombre, precio, Categoria, descripcion)
 
               addProduct(imagen, nombre, precio, Categoria, descripcion)
@@ -73,18 +77,21 @@ const Body= () => {//funcion flecha para indicar que es una funcion
 
       ///GUARDAR PRODUCTOS/////////////////////////////////////////////////////////////////////////////////////////////////////////////
       
+      const mer = async () => {
+
+        const data = await getProductos();//
+ 
+        setProductos(data)
+
+
+     
+      }
+
       useEffect(() => {// un use efect no puede ir dentro/ declarados dentro de funciones
-
-       const mer = async () => {
-
-       const data = await getProductos();//
-
-       setProductos(data)
-    
-        }
+       
        mer() //una vez subido el codigo  se actualiza el estado con el update par que se muestre de una vez
 
-      }, [update]);//evita que caiga en un bucle infinito
+      }, [update]);//evita que caiga en un bucle infinito.
 
       ////LA FUNCION DELETE ESTA EN UN FETCH//////////////////////////////////////////////////////////////////////////
   
@@ -113,14 +120,16 @@ const Body= () => {//funcion flecha para indicar que es una funcion
     <br />
 
       <div className='publicar'>
+      <br />
       <p className='Ppublicar'>Publicar Producto</p>
       <br />
       <input className='navBuscar' type="text" placeholder='Buscar producto' value={Buscar} onChange={(e) => setBuscar (e.target.value.trim())}/>
       <br />
-      <button onClick={filtrados} >Buscar</button> 
       <br />
-      <hr />
+      <button onClick={filtrados} className='fil'>Buscar</button> 
       <br />
+      <br /> 
+      <hr />       
       <p className='Ppublicar'>Publicar Producto</p>
       <br />
       <input className='input_body' type='img' placeholder='img' value={Imagen} onChange={(e) => setImagen (e.target.value.trim())}></input>
@@ -153,13 +162,13 @@ const Body= () => {//funcion flecha para indicar que es una funcion
                   <Card.Title > <div className='bbb'>{producto.Producto}</div></Card.Title>
                   <Card.Text>
                       <div className='bbb' >{producto.Precio}</div>
-                      <Card.Text>
+                      <Card.Text >
                       <div className='bbb' >{producto.Descripcion}</div>
-                  </Card.Text>
+                  </Card.Text> 
                   </Card.Text>
                   <Edit id={producto.id} nombre={producto.Producto} imagen={producto.Imagen} precio={producto.Precio} descripcion={producto.Descripcion} />
 
-                  <Button variant="primary" id='btnEli' onClick={() => {setUpdate (update +1); handleClick(producto.id)}}>Eliminar</Button>
+                  <button className='edit2' onClick={() => {setUpdate (update +1); handleClick(producto.id)}}>Eliminar</button>
                 </Card.Body >
               </Card>
         </div>

@@ -10,6 +10,7 @@ const  Footer= () => {//funcion flecha para indicar que es una funcion
      <>
      <br /><br /> 
      <div>
+     <style>{'body { background-color:  white) }'}</style>
         <footer className='fooder'> 
 
           <div className='fooder-in'>

@@ -64,7 +64,8 @@ const editar = () => { //funcion de boton de eliminar
   <button onClick={cerrar}>cerrar</button>
   <button onClick={() => editar(id, imagen, nombre, precio, descripcion)} ref={btn} id={id}>Cambiar</button>
     </dialog>
- <button onClick={show} >Edit </button>
+
+ <button className='edit' onClick={show} >Editar</button>
     </>
   )
 }

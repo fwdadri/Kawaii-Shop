@@ -1,14 +1,15 @@
-import Header from '../components/Header'
+import Header2 from '../components/Header'
 import Carosel from '../components/Carrusel'
 import '../pages/tienda.css'
 import {getProductos } from '../servers/fetch'
 import {useEffect, useState} from 'react'
 import Fooder from '../components/Fooder'
 
+
 import Card from 'react-bootstrap/Card';
 
 
-const Tienda= () => {//funcion flecha para indicar que es una funcion
+const Tienda2= () => {//funcion flecha para indicar que es una funcion
 
 
   const [Productos, setProductos] = useState([]);  //que esta pasando aquiiiii?  
@@ -35,7 +36,7 @@ const Tienda= () => {//funcion flecha para indicar que es una funcion
   return(   
       <>
        
-       <Header/>
+       <Header2/>
         <Carosel/>
   
         <div className="task-tittle">
@@ -90,4 +91,4 @@ const Tienda= () => {//funcion flecha para indicar que es una funcion
   )    
 }
   
-export default Tienda
+export default Tienda2

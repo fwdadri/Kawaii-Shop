@@ -65,12 +65,43 @@
   ],
   "productos": [
     {
-      "id": "6cbc",
       "Imagen": "https://i.pinimg.com/originals/8d/5b/fe/8d5bfe42b29a2c4f2b4dc926b45923c6.jpg",
-      "Producto": "PelucheKuromi",
+      "Producto": "Kuromi",
       "Precio": "15000",
       "Descripcion": "boka chan ga oshiete kureta irona...",
-      "Categoria": "boka chan ga oshiete kureta irona..."
+      "id": "6cbc"
+    },
+    {
+      "id": "8dba",
+      "Imagen": "qwerty",
+      "Producto": "wertyu",
+      "Precio": "wertyu",
+      "Descripcion": "qwerty",
+      "Categoria": "wertyu"
+    },
+    {
+      "id": "f096",
+      "Imagen": "cccc",
+      "Producto": "cccc",
+      "Precio": "ccc",
+      "Descripcion": "cccc",
+      "Categoria": "ccc"
+    },
+    {
+      "id": "796f",
+      "Imagen": "gdgdgfsgssf",
+      "Producto": "dgfshgsfdf",
+      "Precio": "dsfdfdafafdadf",
+      "Descripcion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "Categoria": "ghgdhd"
+    },
+    {
+      "id": "5e0a",
+      "Imagen": "tttt",
+      "Producto": "jjj",
+      "Precio": "jjjjj",
+      "Descripcion": "nknjknkjnk",
+      "Categoria": "jjjjjj"
     }
   ]
 }
