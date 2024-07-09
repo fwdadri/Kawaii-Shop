@@ -1,5 +1,5 @@
 import '../components/Estilos.css'
-import {useEffect, useRef, useState} from 'react'
+import {useEffect, useState} from 'react'
 import { addProduct} from '../servers/fetch';
 import { getProductos}  from '../servers/fetch';
 import {deleteProducto} from '../servers/fetch'
@@ -21,8 +21,7 @@ const Body= () => {//funcion flecha para indicar que es una funcion
       const [Descripcion, setDescripcion]= useState('')
       const [update, setUpdate]= useState(0)//para que se actualice una vez subido el producto// solo con el uno se vuelve a cargar todooo
       const [Productos, setProductos] = useState([])
-
-      const refModal = useRef()// y ese use ref khe
+// y ese use ref khe
 
       const [Buscar, setBuscar]= useState('');
 
@@ -49,22 +48,18 @@ const Body= () => {//funcion flecha para indicar que es una funcion
           }
         });
       };
-
-
-    
-    console.log(refModal);
  
-
-      ////VALIDACION PARA SUBIR PRODUCTO///////////////////////////////////////////////////////////////////////////////////
-        const subir = async (imagen, nombre, precio, descripcion, Categoria) => {
+////VALIDACION PARA SUBIR PRODUCTO///////////////////////////////////////////////////////////////////////////////////
+        const subir = async (imagen, nombre, precio, Categoria, descripcion)  => {
   
           if (imagen ==''|| nombre ==''|| precio =='' || descripcion ==''|| Categoria ==''){ // null puede incluir unun espacio vacio
              alert("Complete los espacios vacios")
 
             }else{
               alert("Publicacion exitosa")
+              console.log(imagen, nombre, precio, Categoria, descripcion)
 
-              addProduct(imagen, nombre, precio, descripcion, descripcion)
+              addProduct(imagen, nombre, precio, Categoria, descripcion)
               
               setImagen('')
               setDescripcion('')
@@ -92,17 +87,24 @@ const Body= () => {//funcion flecha para indicar que es una funcion
       }, [update]);//evita que caiga en un bucle infinito
 
       ////LA FUNCION DELETE ESTA EN UN FETCH//////////////////////////////////////////////////////////////////////////
+  
+   const filtrados = async () => {
 
-const filtrando = async()=> {
 
-   const valores = await getProductos()
-   valores.filter(elem=>elem.Producto === Nombre)
-   setBuscar(Buscar)
+   const data = await getProductos();
+
+   const categoriaFiltrada = data.filter(prdct => prdct.Categoria === Buscar);//categoria trae el producto
+
+   console.log(categoriaFiltrada)
+
+   setProductos(categoriaFiltrada);
+};
+
+
+
 
 //como renderizar//estudiar proof y 
-}
-
-
+//}
 //funcion flecha porque si, porque es react
 
     return(  
@@ -112,29 +114,27 @@ const filtrando = async()=> {
 
       <div className='publicar'>
       <p className='Ppublicar'>Publicar Producto</p>
+      <br />
       <input className='navBuscar' type="text" placeholder='Buscar producto' value={Buscar} onChange={(e) => setBuscar (e.target.value.trim())}/>
-      <button onClick={filtrando}>Buscar</button> 
       <br />
+      <button onClick={filtrados} >Buscar</button> 
       <br />
+      <hr />
       <br />
       <p className='Ppublicar'>Publicar Producto</p>
       <br />
       <input className='input_body' type='img' placeholder='img' value={Imagen} onChange={(e) => setImagen (e.target.value.trim())}></input>
-      <br /><br />
-
+      <br />
       <input className='input_body' type="Nombre" placeholder='Nombre' value={Nombre} onChange={(e) => setNombre (e.target.value.trim())}/>
-      <br /><br />
-
+      <br />
       <input className='input_body' type="Precio" placeholder='Precio' value={Precio} onChange={(e) => setPrecio (e.target.value.trim())}/>
-      <br /><br />
-
+      <br />
       <input className='input_body' type="Categoria" placeholder='Categoria' value={Categoria} onChange={(e) => setCategoria (e.target.value.trim())}/>
-      <br /><br /> 
-
+      <br />
       <input className='input_body_descripcion' type="Descripcion" placeholder='Descripcion' value={Descripcion} onChange={(e) => setDescripcion (e.target.value.trim())}/>
       <br /><br />
 
-      <button className='btn_body' onClick={()=> subir(Imagen, Nombre, Precio, Descripcion)}>Subir Producto</button>
+      <button className='btn_body' onClick={()=> subir(Imagen, Nombre, Precio, Categoria, Descripcion)}>Subir Producto</button>
    
 
     </div>

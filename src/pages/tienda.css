@@ -1,7 +1,40 @@
 .tienda{
     width: 1210px;
     height: 500px;
-    margin-left: 60px;
+    margin-left: 59px;
 }
 
+.task-tittle{
+    height: 80px;
+    width: 1332px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: var(--task-tittle-color);
+    background-color: #77d6ff;
+    /* background-color: #E8A1B3; */
+}
+.task-tittle h2{
+font-size: 20px;
+   margin-left: 160px;
+   text-transform: uppercase;
+   animation: loopText 10s infinite linear;
+   font-family: "Luckiest Guy", cursive;
+   font-weight: 400;
+   font-style: normal;
+   color: white;
+  white-space: nowrap; /* Para evitar el salto de línea */
+  animation: loopText 10s infinite linear;
+}
+@keyframes loopText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 
+}

@@ -46,10 +46,10 @@
 .publicar{
     background-color: white;
     height: 700px;
-    width: 360px;
+    width: 300px;
     border-radius: 10px;
     padding: 1%;
-    margin-left: 6%;
+    margin-left: 3%;
 }
 
 .saludo{
@@ -68,17 +68,23 @@
     background: lightblue;
 }
 .input_body{
-    width: 280px;
-    margin-left: 9%;
-    height: 20px;
-    background-color: white;
+    display: flex;
+    margin-left: 20px;
+    height: 30px;
+    width: 180px;
+    border-color: rgb(194, 74, 176);
+    background-color: rgb(255, 192, 247);
+    border-radius: 10px;
 }
 
 .input_body_descripcion{
-    width: 280px;
-    margin-left: 9%;
+    width: 180px;
+    margin-left: 20px;
     height: 50px;
-    background: white;
+    display: flex;
+    border-color: rgb(194, 74, 176);
+    background-color: rgb(255, 192, 247);
+    border-radius: 10px;
 }
 
 .btn_body{
@@ -89,18 +95,16 @@
 }
 
 .productos_publicados{
-    width: 750px;
-    height: 700px;
+    width: 950px;
+    height: 730px;
     border-radius: 10px;
-    margin-left: 39%;
+    margin-left: 27%;
     margin-top: -724px;
     background: white;
-    overflow: scroll;
+    overflow: auto;
+    word-wrap: break-word;
 }
 
-.salir{
-margin-bottom: 10px;
-}
 
 .fooder{
     display: grid;
@@ -174,12 +178,6 @@ margin-bottom: 10px;
     height: 500px;
 }
 
-/*.Carousel.indicators{
-    display: block;
-    visibility: hidden;
-
-}*/
-
 .d-block{
    width: 100%;
    height: 520px;
@@ -205,6 +203,7 @@ margin-bottom: 10px;
     display: flex;
     justify-content: center;
     background: white;
+    margin-top: -80px;
 }
 
 .card{
@@ -221,13 +220,13 @@ margin-bottom: 10px;
 .grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 5px;
     background-color: white;
-    margin-top: -180px;
+    margin-top: -100px;
 }
 
 .cards{
-    margin-top: 200px;
+    margin-top: 210px;
 }
 
 .card-img-top{
@@ -239,66 +238,6 @@ margin-bottom: 10px;
     border-radius: 50%;
 }
 
-
-
-  
-.task-tittle{
-    height: 150px;
-    width: 1330px;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    white-space: nowrap;
-    overflow: hidden;
-    background-color: var(--task-tittle-color);
-    background-color: #55d4f1;
-    /* background-color: #E8A1B3; */
-}
-.task-tittle div{
-font-size: 20px;
-   margin-left: 160px;
-   text-transform: uppercase;
-   animation: loopText 10s infinite linear;
-   font-family: "Luckiest Guy", cursive;
-   font-weight: 400;
-   font-style: normal;
-   color: var(--white-color);
-  white-space: nowrap; /* Para evitar el salto de línea */
-  animation: loopText 10s infinite linear;
-}
-@keyframes loopText {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.cir{
-    background-image: url(../img/peluches.jpg);
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 50px;
-}
-
-.colum{
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: repeat(2, 1fr);
-
-height: 5px;
-margin-top: -120px;
-}
-
-.cate{
-    margin-bottom: 200px;
-}
-
-
-  
   
 .dialog{
     height: 550px;
