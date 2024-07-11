@@ -1,0 +1,106 @@
+.tiendaPrincipal{
+    width: 1210px;
+    height: 750px;
+    margin-left: 30px;
+    overflow: scroll;
+    background-color: white;
+}
+
+.task-tittle{
+    height: 80px;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: var(--task-tittle-color);
+    background-color: #a9f9ff;
+    /* background-color: #E8A1B3; */
+}
+.task-tittle h2{
+font-size: 20px;
+   margin-left: 160px;
+   text-transform: uppercase;
+   animation: loopText 10s infinite linear;
+   font-family: "Luckiest Guy", cursive;
+   font-weight: 400;
+   font-style: normal;
+   color: rgb(209, 41, 192);
+  white-space: nowrap; /* Para evitar el salto de línea */
+  animation: loopText 10s infinite linear;
+}
+@keyframes loopText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.cards2{
+ margin-left: 30px;
+ margin-top: 20px;
+ box-shadow: 5px 5px 15px gray;
+ text-align: center;
+}
+
+.card-body{
+  
+ box-shadow: 5px 5px 15px rgb(229, 229, 229)
+}
+
+
+.grid2{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  /* gap: 5px; */
+  gap: calc(300px + -35%);
+  background-color: white;
+ 
+}
+
+.agre{
+  margin-left: 5px;
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  background-color: rgb(110, 190, 112);
+}
+.btnEli{
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  background-color: rgb(121, 226, 255)
+}
+
+.dia2{
+    margin-left: -200px;
+    font-size: large;
+}
+
+.dialog2{
+    height: 500px;
+    width: 600px;
+    background-color: rgb(170, 235, 248);
+    color: rgb(181, 102, 179);
+    border-radius: 10px;
+    border-color: rgb(170, 235, 248);
+}
+
+.viendo{
+ margin-left: 480px ;
+ margin-top: -270px;
+}
+
+.edibtn2{
+  margin-left: -200px;
+ 
+}
+.btnclose2{
+margin-left: 490px;
+margin-top: 30px;
+}

@@ -55,123 +55,35 @@
       "Correo": "    ",
       "Nombre": "    ",
       "Contrasena": "   "
+    },
+    {
+      "id": "e9c3",
+      "Correo": "Barryveg12@gmail.com",
+      "Nombre": "barryveg",
+      "Contrasena": "12345678"
     }
   ],
   "productos": [
     {
-      "adriana": "1",
-      "id": "07f5"
+      "id": "0f92",
+      "Imagen": "nnn",
+      "Producto": "nnn",
+      "Precio": "nnn",
+      "Descripcion": "nnn"
     },
     {
-      "id": "6319"
+      "Imagen": "https://i.pinimg.com/originals/5c/c5/8e/5cc58e9f0d4c32dbd45e831a84c52e0a.jpg",
+      "Producto": "bbb",
+      "Precio": "100",
+      "Descripcion": "bbbbbbbbbbbbbb",
+      "id": "530d"
     },
     {
-      "id": "d858"
-    },
-    {
-      "id": "9a46"
-    },
-    {
-      "id": "984c"
-    },
-    {
-      "id": "9b8e"
-    },
-    {
-      "id": "4a0a"
-    },
-    {
-      "id": "f524"
-    },
-    {
-      "id": "244d"
-    },
-    {
-      "id": "1ff4"
-    },
-    {
-      "id": "593e",
-      "Producto": "peluche",
-      "Precio": "1000",
-      "Descripcion": "cjbsjkcbksjbckjdqbc"
-    },
-    {
-      "id": "edcc",
-      "Producto": "peluche",
-      "Precio": "1000",
-      "Descripcion": "cjbsjkcbksjbckjdqbc"
-    },
-    {
-      "id": "db58",
-      "Producto": "peluche",
-      "Precio": "1000",
-      "Descripcion": "cjbsjkcbksjbckjdqbc"
-    },
-    {
-      "id": "fe1d",
-      "Producto": "peluche",
-      "Precio": "1000",
-      "Descripcion": "cjbsjkcbksjbckjdqbc"
-    },
-    {
-      "id": "6b24",
-      "Producto": "peluche",
-      "Precio": "1000",
-      "Descripcion": "cjbsjkcbksjbckjdqbc"
-    },
-    {
-      "id": "2314",
-      "Producto": "peluche",
-      "Precio": "1000",
-      "Descripcion": "cjbsjkcbksjbckjdqbc"
-    },
-    {
-      "id": "2878",
-      "Producto": "peluche",
-      "Precio": "1000",
-      "Descripcion": "cjbsjkcbksjbckjdqbc"
-    },
-    {
-      "id": "e3d7",
-      "Producto": "peluche",
-      "Precio": "1000",
-      "Descripcion": "cjbsjkcbksjbckjdqbc"
-    },
-    {
-      "id": "9955",
-      "Producto": "peluche",
-      "Precio": "1000",
-      "Descripcion": "cjbsjkcbksjbckjdqbc"
-    },
-    {
-      "id": "31d7",
-      "Producto": "peluche",
-      "Precio": "1000",
-      "Descripcion": "cjbsjkcbksjbckjdqbc"
-    },
-    {
-      "id": "ec64",
-      "Producto": "peluche",
-      "Precio": "1000",
-      "Descripcion": "cjbsjkcbksjbckjdqbc"
-    },
-    {
-      "id": "43dd",
-      "Producto": "peluche",
-      "Precio": "1000",
-      "Descripcion": "cjbsjkcbksjbckjdqbc"
-    },
-    {
-      "id": "b0da",
-      "Producto": "bbbbbb",
-      "Precio": "bnb",
-      "Descripcion": "jbjb"
-    },
-    {
-      "id": "4c7b",
-      "Producto": "12345",
-      "Precio": "1234",
-      "Descripcion": "jhhj"
+      "id": "0697",
+      "Imagen": "https://i.pinimg.com/originals/5c/c5/8e/5cc58e9f0d4c32dbd45e831a84c52e0a.jpg",
+      "Producto": "n",
+      "Precio": "n",
+      "Descripcion": "nnnnnnn"
     }
   ]
 }

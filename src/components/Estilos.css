@@ -1,15 +1,43 @@
+
+
 .header {
+    /* display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; */
     background-color: white;
-    color: rgb(0, 0, 0);
+    color: rgb(216, 50, 189);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 160px;
+    margin-top: -10px;
+    margin-left:-8px ;
+    /* width: 106%; */
+    width: 100%;
 }
 
-.logo{
+.admi {
+    background: lightblue;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: 10%;
+    margin-right: 50px;
+    margin-left: -15px;
+}
+.logo2{
     height: 110px;
+    margin-left: 30px;
+    margin-top: 10px;
 }
-
+.nav1{
+    /* margin-left: 40px; */
+    background-color: white;
+    text-decoration: none;
+    color: rgb(216, 50, 189);
+}
 .administrar{
     background-color: white;
     font-size: 17px;
@@ -19,76 +47,297 @@
     background-color: white;
     font-size: 17px;
 }
-
-.admi {
-    background: lightblue;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin-top: 5%;
-    margin-left: 25%;
-}
-.salir{
-    width: 100px;
-    height: 50px;
-    border-radius: 10%;
-}
-
 .publicar{
     background-color: white;
-    height: 700px;
-    width: 360px;
+    height: 730px;
+    width: 300px;
     border-radius: 10px;
-    padding: 1%;
     margin-left: 3%;
+    justify-items: center;
+}
 
-}
-.fooder{
-    background-color: white;
-    height:150px;
-}
 .saludo{
     background-color: white;
 }
 .saludoadmi{
     background-color: white;
 }
-.Ppublicar{
+.publicar{
     background-color: white;
     text-align: center;
+    color: rgb(201, 86, 183);
 }
 .publi_img{
-    width: 300px;
-    height: 300px;
     margin-left: 9%;
     background: lightblue;
 }
 .input_body{
-    width: 280px;
-    margin-left: 9%;
-    height: 20px;
-    background-color: white;
+    display: flex;
+    margin-left: 60px;
+    height: 30px;
+    width: 180px;
+    border-color: rgb(194, 74, 176);
+    background-color: rgb(255, 192, 247);
+    border-radius: 10px;
 }
 
 .input_body_descripcion{
-    width: 280px;
-    margin-left: 9%;
+    width: 180px;
+    margin-left: 20px;
     height: 50px;
-    background: white;
+    display: flex;
+    border-color: rgb(194, 74, 176);
+    background-color: rgb(255, 192, 247);
+    border-radius: 10px;
+    margin-left: 60px;
 }
 
 .btn_body{
     width: 130px;
     height: 50px;
-    margin-left: 30%;
     border-radius: 10px;
+    background-color: rgb(255, 121, 235);
 }
 
 .productos_publicados{
-    width: 750px;
-    height: 720px;
+    width: 900px;
+    /* width: 100%; */
+    height: 730px;
     border-radius: 10px;
-    margin-left: 37%;
-    margin-top: -740px;
-    background: lightblue;
+    margin-left: 27%;
+    margin-top: -754px;
+    background: white;
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+
+.fooder{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background-color: white;
+    height:180px;
+    text-align: center;
+    width: 100%;
+    height: 210px;
+    margin-top: 10px;
+    margin-left:-8px
+    
+}
+
+.fooder2{
+    text-align: center;
+    background-color: white;
+    color: rgb(216, 50, 189);
+}
+
+.fooder-in{
+    background-color: white;
+    margin-top: 16px;
+    color: rgb(216, 50, 189);
+}
+
+.fooder-in-p{
+    background-color: white;
+    margin-left: 100px;
+    text-align: left;
+}
+
+.fooder-in-c{
+    background-color: white;
+    margin-left: 120px;
+}
+
+.fooder-img{
+    background-color: white;
+    height: 20px;
+}
+
+.logo-foo{
+    height: 130px;
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.contacto{
+    background-color: white;
+    margin-left: 103px;
+}
+
+.publicados{
+    background-color: white;
+    text-align: center;
+    color: rgb(216, 50, 189);
+}
+
+.Carrusel{
+    height: 520px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.CorruselItems{
+    height: 500px;
+}
+
+.d-block{
+   width: 100%;
+   height: 520px;
+   object-fit: cover;
+}
+
+.Carousel.indicators{
+    background-color: none;
+}
+
+
+.bbb{
+    background-color: white;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card-body{
+    background-color: white;
+}
+
+.cuadroo{
+    display: flex;
+    justify-content: center;
+    background: white;
+    margin-top: -80px;
+}
+
+.card{
+    margin-left: 10px;
+
+}
+
+.father{
+    display: flex;
+    margin: 20px;
+    background: white;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    background-color: white;
+    margin-top: -100px;
+}
+
+.cards{
+    margin-top: 210px;
+}
+
+.card-img-top{
+    height: 160px;
+    width: 5%;
+}
+
+.redondo{
+    border-radius: 50%;
+}
+
+  
+.dialog{
+    height: 500px;
+    width: 500px;
+    background-color: rgb(170, 235, 248);
+    color: rgb(181, 102, 179);
+    border-radius: 10px;
+    border-color: rgb(170, 235, 248);
+}
+.btnclose{
+    margin-left: 230px;
+    background-color: rgb(235, 147, 232);
+    width: 90px;
+    height: 40px;
+    border-color: rgb(160, 82, 158);
+    border-radius: 5px;
+}
+
+
+.edibtn{
+    margin-left: 30px;
+    width: 90px;
+    background-color: rgb(235, 147, 232);
+    height: 40px;
+    border-color: rgb(160, 82, 158);
+    border-radius: 5px;
+}
+
+.navBuscar{
+    display: flex;
+    margin-left: 60px;
+    height: 30px;
+    width: 180px;
+    border-color: rgb(194, 74, 176);
+    background-color: rgb(255, 192, 247);
+    border-radius: 10px;
+}
+
+.edit{
+    border-radius: 10px;
+    height: 38px;
+    width: 80px;
+    background-color: rgb(110, 190, 112);
+    margin-left: 10px;
+}
+.edit2{
+    border-radius: 10px;
+    height: 38px;
+    width: 80px;
+    background-color: rgb(247, 93, 119);
+    margin-left: 15px;
+}
+
+.fil{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgb(255, 121, 235);
+}
+
+.btnDrop{
+
+    margin-left: 15px;
+    height: 10px;
+    width: 5px;
+}
+
+.nav0{
+    margin: 50px;
+}
+
+.drop{
+    background-color: rgb(255, 121, 235);
+}
+
+.dia{
+margin-left: 80px;
+}
+.ti{
+    text-align: center;
+}
+
+.dropD{
+    text-decoration: none;
+    color: rgb(214, 33, 187);
+    font-size:large;
+    line-height: 40px;
+}
+
+.drop{
+    height: 400px;
+}
+
+.imver{
+    width: 300px;
+    margin-left: -250px;
 }

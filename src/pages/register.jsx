@@ -1,22 +1,19 @@
-import { addUsuario } from '../servers/fetch';
-import { getUsuarios } from '../servers/fetch';
+import { addUsuario,getUsuarios  } from '../servers/fetch';
+
 //funciones personales sin llaves, funcion importada de internet van con llaves{}
 import {useState} from 'react'//porque sale React en rojo? con estas nuevas tecnologias ya no es necesario usarlo
 //sse esta instalando una librera de bustrap, el profe sule usarlo con el form de bostrap
 import { Link } from "react-router-dom"
 import '../pages/Register.css'
+import img1 from '../img/logokawaii.jpg'
 
 
 const Register = () => {
- //aun no entiendo porque son necesarios
+
   const [Gmail, setGmail]= useState();//se esta definiendo el valor gmail
   const [Usuario, setUsuario]= useState();//useState permite manipular los estados de las variables
   const [Password, setPassword]= useState()//el usuario iniciar se setea sin nada
-  //se define el estado de la variable
-  //const boton = function boton(){//porque se puse async? es assyncronica?no lo es  y se quito el async porque ya se esta usando en post data
-   // addUsuario(Gmail, Usuario, Password)
-   // alert("registro exitoso")
-  //}
+
   const handleSubmit = async (event) => {
 
     event.preventDefault();
@@ -47,31 +44,41 @@ const Register = () => {
   //un complemento solo llena la carencia
 //para que el on sumit, esta en la espera del evento
   return (
-    <>
-    <form onSubmit={handleSubmit}>
-      <h1>Crea una Cuenta</h1>
-      <br /><br />
-     <label htmlFor="">Gmail</label>
-     <br />
-     <input type={"text"} value={Gmail} onChange={(e) => setGmail (e.target.value.trim())} placeholder={'Gmail'} />
-     <br /><br />
+    
 
-     <label htmlFor="">User</label>
-     <br />
-     <input type={"text"} value={Usuario} onChange={(e) => setUsuario (e.target.value.trim())} placeholder={'user'} />
-     <br /><br />
+<div className='imgfondo'>
+    
+<div className='form'>
 
-     <label htmlFor="">Password</label>
-     <br />
-     <input type={"text"} value={Password} onChange={(e) => setPassword (e.target.value.trim())} placeholder={'password'} />
-     <br /><br />
-     
-     <button type='submit'>Crear Cuenta</button>
+<div className='img-register'><img src={img1} alt="" className="logo" /></div> 
 
-     <Link to="/">Ir a cuenta</Link>
+<form className='register-form' onSubmit={handleSubmit}>
+  
+<h1 className='tex-register'>Crea una Cuenta</h1>
 
-    </form>
-    </>
+ <label className='label-register1' htmlFor="">Gmail</label>
+ <input type={"text"} className='input-register' value={Gmail} onChange={(e) => setGmail (e.target.value.trim())} placeholder={'Gmail'} />
+ <br />
+
+ <label className='label-register2' htmlFor="">User</label>
+ <input type={"text"} className='input-register' value={Usuario} onChange={(e) => setUsuario (e.target.value.trim())} placeholder={'user'} />
+ <br />
+
+ <label className='label-register3' htmlFor="">Password</label>
+ <input type={"text"} className='input-register' value={Password} onChange={(e) => setPassword (e.target.value.trim())} placeholder={'password'} />
+ <br />
+ 
+ <button className='btn-register' type='submit'>Crear Cuenta</button>
+
+ <Link className='register-link' to="/">Ir a cuenta</Link>
+<br /><br /><br /><br />
+</form>
+</div>
+<br /><br /><br />
+<style>{'body { background-color: rgb(222, 164, 210);}'}</style>
+    </div>
+       
+
   )
 }
 //cada que se ejecuta el enter se activa el evento summit

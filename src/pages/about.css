@@ -1,0 +1,64 @@
+
+
+.aboutUs{
+    display: flex;
+    width: 1270px;
+    height: 1000px;
+    background-image: url(../img/miniso.jpg);
+    width: 100%;
+    margin-left:-9px ;
+}
+
+.about-text{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    line-height: 30px;
+    margin-top: -900px;
+    width: 1000px;
+    height: 700px;
+    margin-left: 160px;
+    font-size: large;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(222, 164, 210)
+}
+
+.img-foto{
+    height: 300px;
+}
+
+.img-foto2{
+    height: 300px;
+}
+
+.text-a{
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.text-b{
+    width: 50px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.text-c{
+    width: 410px;
+    margin-top: 30px;
+
+}
+
+.img-foto{
+    margin-top: 20px;
+    margin-left: 100px;
+
+}
+
+.img-foto2{
+    margin-left: 100px;
+}
+
+.borde{
+    height: 10%;
+}
