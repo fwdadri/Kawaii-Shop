@@ -1,9 +1,11 @@
+
+
 .header {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-row-gap: 0px; */
     background-color: white;
     color: rgb(216, 50, 189);
     display: flex;
@@ -12,7 +14,8 @@
     height: 160px;
     margin-top: -10px;
     margin-left:-8px ;
-    width: 106%;
+    /* width: 106%; */
+    width: 100%;
 }
 
 .admi {
@@ -20,8 +23,9 @@
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    margin-top: -10%;
+    margin-top: 10%;
     margin-right: 50px;
+    margin-left: -15px;
 }
 .logo2{
     height: 110px;
@@ -29,7 +33,7 @@
     margin-top: 10px;
 }
 .nav1{
-    margin-left: 40px;
+    /* margin-left: 40px; */
     background-color: white;
     text-decoration: none;
     color: rgb(216, 50, 189);
@@ -96,7 +100,8 @@
 }
 
 .productos_publicados{
-    width: 950px;
+    width: 900px;
+    /* width: 100%; */
     height: 730px;
     border-radius: 10px;
     margin-left: 27%;
@@ -116,7 +121,7 @@
     background-color: white;
     height:180px;
     text-align: center;
-    width: 105%;
+    width: 100%;
     height: 210px;
     margin-top: 10px;
     margin-left:-8px
@@ -169,11 +174,9 @@
 }
 
 .Carrusel{
-    /* z-index: -1;
-    margin-top: -5%; */
     height: 520px;
     width: 90%;
-    margin-left: 8%;
+    margin-left: 5%;
 }
 
 .CorruselItems{
@@ -194,6 +197,8 @@
 .bbb{
     background-color: white;
     text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .card-body{
@@ -241,10 +246,31 @@
 
   
 .dialog{
-    height: 550px;
+    height: 500px;
     width: 500px;
+    background-color: rgb(170, 235, 248);
+    color: rgb(181, 102, 179);
+    border-radius: 10px;
+    border-color: rgb(170, 235, 248);
+}
+.btnclose{
+    margin-left: 230px;
+    background-color: rgb(235, 147, 232);
+    width: 90px;
+    height: 40px;
+    border-color: rgb(160, 82, 158);
+    border-radius: 5px;
 }
 
+
+.edibtn{
+    margin-left: 30px;
+    width: 90px;
+    background-color: rgb(235, 147, 232);
+    height: 40px;
+    border-color: rgb(160, 82, 158);
+    border-radius: 5px;
+}
 
 .navBuscar{
     display: flex;
@@ -279,9 +305,39 @@
 }
 
 .btnDrop{
-    background-color: rgb(255, 121, 235);
-    margin-left: 70px;
+
+    margin-left: 15px;
     height: 10px;
     width: 5px;
+}
 
+.nav0{
+    margin: 50px;
+}
+
+.drop{
+    background-color: rgb(255, 121, 235);
+}
+
+.dia{
+margin-left: 80px;
+}
+.ti{
+    text-align: center;
+}
+
+.dropD{
+    text-decoration: none;
+    color: rgb(214, 33, 187);
+    font-size:large;
+    line-height: 40px;
+}
+
+.drop{
+    height: 400px;
+}
+
+.imver{
+    width: 300px;
+    margin-left: -250px;
 }

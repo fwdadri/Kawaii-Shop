@@ -9,61 +9,58 @@ const Edit = ({id, imagen, nombre, precio, descripcion}) => {
     const [inputDescripcion, setInputDescripcion] = useState(descripcion);
     const editRef = useRef()
 
- const btn = useRef()//de donde salio//ok ya entendi de donde salieron esos ref //pero donde esta useref? esta importada
+    const btn = useRef()//de donde salio//ok ya entendi de donde salieron esos ref //pero donde esta useref? esta importada
 
- const show = () =>{
+  const show = () =>{
+   editRef.current.showModal()
+  }
 
-  editRef.current.showModal()
+  const cerrar = () => {
+    editRef.current.close()// khe con ese current y ref
+  }
 
-}
+  const editar = () => { //funcion de boton de eliminar
 
-const cerrar = () => {
+    let nuevoProducto = {
 
- editRef.current.close()// khe con ese current y ref
-
-}
-
-const editar = () => { //funcion de boton de eliminar
-
-   let nuevoProducto = {
-
-    Imagen: inputImagen,
-    Producto: inputNombre,//se creo un cuerpo el cual sera el remplazante
-    Precio: inputPrecio,
-    Descripcion: inputDescripcion
-   }
+     Imagen: inputImagen,
+     Producto: inputNombre,//se creo un cuerpo el cual sera el remplazante
+      Precio: inputPrecio,
+      Descripcion: inputDescripcion
+    }
 
 
-    editarProducto(id, nuevoProducto)
+     editarProducto(id, nuevoProducto)
 
-    alert ("producto editado")
+     alert ("producto editado")
+  }
 
 
-}
 
+  
   return (
 
   <>
   <dialog ref={editRef} className="dialog">
-  <p>Editar producto</p>
+  <br />    
+  <h5 className='ti'>Editar producto</h5>
 
-  <p>IMG</p><input value={inputImagen} onChange={(e) => setInputImagen (e.target.value.trim())} type="text" />
+  <br />  <br />
+  <p className='dia'>Imagen: <input value={inputImagen} onChange={(e) => setInputImagen (e.target.value.trim())} type="text" /></p>
+  <br />
+
+  <p className='dia'>Nombre: <input value={inputNombre} onChange={(e) => setInputNombre(e.target.value.trim())} type="text" /></p>
+  <br />
+
+  <p className='dia'>Precio: <input value={inputPrecio} onChange={(e) => setInputPrecio (e.target.value.trim())} type="text" /></p>
+
+  <br />
+  <p className='dia'>Descripcion: <input value={inputDescripcion} onChange={(e) => setInputDescripcion (e.target.value.trim())} type="text" /></p>
   <br />
   <br />
-  <br />
-  <p>Nombre</p><input value={inputNombre} onChange={(e) => setInputNombre(e.target.value.trim())} type="text" />
-  <br />
-  <br />
-  <br />
-  <p>Precio</p><input value={inputPrecio} onChange={(e) => setInputPrecio (e.target.value.trim())} type="text" />
-  <br />
-  <br />
-  <p>Descripcion</p><input value={inputDescripcion} onChange={(e) => setInputDescripcion (e.target.value.trim())} type="text" />
-  <br />
-  <br />
-  <button onClick={cerrar}>cerrar</button>
-  <button onClick={() => editar(id, imagen, nombre, precio, descripcion)} ref={btn} id={id}>Cambiar</button>
-    </dialog>
+  <button className='edibtn' onClick={() => editar(id, imagen, nombre, precio, descripcion)} ref={btn} id={id}>Cambiar</button>
+  <button className='btnclose' onClick={cerrar}>cerrar</button>
+  </dialog>
 
  <button className='edit' onClick={show} >Editar</button>
     </>

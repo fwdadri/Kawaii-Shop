@@ -5,6 +5,8 @@ import {getProductos } from '../servers/fetch'
 import {useEffect, useState} from 'react'
 import Fooder from '../components/Fooder'
 
+import Ver from '../components/modal/ver'   
+
 import Card from 'react-bootstrap/Card';
 
 
@@ -13,8 +15,7 @@ const Tienda= () => {//funcion flecha para indicar que es una funcion
 
   const [Productos, setProductos] = useState([]);  //que esta pasando aquiiiii?  
   
-
-
+  
   const objetos = async () => {
 
     let product = await getProductos()
@@ -39,45 +40,34 @@ const Tienda= () => {//funcion flecha para indicar que es una funcion
         <Carosel/>
   
         <div className="task-tittle">
-
         <h2>Medias</h2>
-
         <h2>Funko Pops</h2>
-
         <h2>Peluches</h2>
-
         <h2>Pulseras</h2>
-
         <h2>Collares</h2>
-
         <h2>Envoltorios</h2>
 
        </div>
 
 
        <div className='tiendaPrincipal'>
-       <div className='grid2'>
+        <div className='grid2'>
 
-
-        {Productos.map((producto) => (
+         {Productos.map((producto) => (
           <div className='cuadroo2' key={producto.id}>
-            <div className='father2'>
               <Card className='cards2' style={{ width: '15rem', height: '10rem'}} >
                 <Card.Img variant="top" src={producto.Imagen} />
                 <Card.Body className='card-body'>
-                  <Card.Title > <div className='bbb'>{producto.Producto}</div></Card.Title>
+                  <Card.Title > <div className='bbb'></div>{producto.Precio}</Card.Title>
                   <Card.Text>
-                      <div className='bbb' >{producto.Precio}</div>
-                      <Card.Text>
-                      <div className='bbb' >{producto.Descripcion}</div>
+                      <div className='bbb' >{producto.Producto}</div>
                   </Card.Text>
-                  </Card.Text>
-                  <button className='agre' id='btnEli'>Agregar <br /> a canasta</button>
+                  <Ver id={producto.id} nombre={producto.Producto} imagen={producto.Imagen} precio={producto.Precio} descripcion={producto.Descripcion}/>
+                  <button className='agre' id='btnEli'>Agregar </button>
                 </Card.Body >
               </Card>
           </div>
-          </div>
-        ))}
+          ))}
 
 
         </div>

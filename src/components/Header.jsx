@@ -13,12 +13,13 @@ const  Header= () => {//funcion flecha para indicar que es una funcion
         <div className='nav1'><Link className='nav1' to="/about">Acerca de nosotros</Link></div>
         <div className='nav1'><Link className='nav1'  to="/tienda">Ir a Tienda</Link></div>
         <div className='nav1'> <Link className='nav1' to="/home">Intinerario</Link></div>   
-        <div className='nav1'><p className='nav1'>¡Hola Administradora!</p></div>    
+        <div className='nav1'><p className='nav0'>¡Hola Administradora!</p></div>    
         <div className="saludo">
         <div  className='nav1'><img className='admi'src={img2} alt="" /></div>
 
         <DropDown/>
         </div>
+
     </header>
     </> 
   )}

@@ -40,7 +40,7 @@ export let getUsuarios = async () => { //todos los asyn necesitan un await, un t
 ////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 //cada usuario va a tener un task que va a ser un array vacio[]
 //todos lo fecth se importan
-export let addProduct = async(Imagen, Producto, Precio, Categoria, Descripcion) => {//es necesario el tarea entre (), le falta el let o const 
+export let addProduct = async(Imagen, Producto, Precio, Descripcion) => {//es necesario el tarea entre (), le falta el let o const 
  
   try { //porque try
    const response = await fetch("http://localhost:3001/productos", {//llama al api
@@ -55,7 +55,6 @@ export let addProduct = async(Imagen, Producto, Precio, Categoria, Descripcion) 
       Producto: Producto,
       Precio: Precio,//se guardan los de la derecha =>
       Descripcion: Descripcion,
-      Categoria: Categoria
     })
  });
  

@@ -5,11 +5,9 @@
     width: 1270px;
     height: 1000px;
     background-image: url(../img/miniso.jpg);
-    width: 106%;
+    width: 100%;
     margin-left:-9px ;
-    margin-top: -16px;
-
-}   
+}
 
 .about-text{
     display: grid;
@@ -17,7 +15,7 @@
     grid-template-rows: repeat(2, 1fr);
     line-height: 30px;
     margin-top: -900px;
-    width: 1000px; 
+    width: 1000px;
     height: 700px;
     margin-left: 160px;
     font-size: large;

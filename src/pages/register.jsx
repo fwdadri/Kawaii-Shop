@@ -9,15 +9,11 @@ import img1 from '../img/logokawaii.jpg'
 
 
 const Register = () => {
- //aun no entiendo porque son necesarios
+
   const [Gmail, setGmail]= useState();//se esta definiendo el valor gmail
   const [Usuario, setUsuario]= useState();//useState permite manipular los estados de las variables
   const [Password, setPassword]= useState()//el usuario iniciar se setea sin nada
-  //se define el estado de la variable
-  //const boton = function boton(){//porque se puse async? es assyncronica?no lo es  y se quito el async porque ya se esta usando en post data
-   // addUsuario(Gmail, Usuario, Password)
-   // alert("registro exitoso")
-  //}
+
   const handleSubmit = async (event) => {
 
     event.preventDefault();

@@ -9,7 +9,9 @@ import img1 from '../img/logokawaii.jpg'
 const Login = () => {
 
   const [Gmail_input, setGmail_input]= useState();//se esta definiendo el valor gmail
-  const [Password_input, setPassword_input]= useState()//el usuario iniciar se setea sin nada
+
+  const [Password_input, setPassword_input]= useState()
+
   const navigate = useNavigate()
 
   const handleSubmit = async (event) => {
@@ -19,17 +21,16 @@ const Login = () => {
 
     if (Gmail_input != null && Password_input != null) {
 
-     const usuarios = await getUsuarios()// como traigo la data del api?Tenia qu crear un jason server//ifgual como hago para recorrer la lista en el local host?
-
+     const usuarios = await getUsuarios()
       let encontrado = usuarios.find((encontrado) => encontrado.Correo === Gmail_input);
     
       if (encontrado) {
 
         if (encontrado.Contrasena == Password_input) {
+
           sessionStorage.setItem("session", encontrado.id)//aqui se guada el id en el seccion storage
-          // alert("Iniciando seccion")
+
           navigate("/home")
-          
         } else{
           alert("contraseña o gmail incorrcto")
         }

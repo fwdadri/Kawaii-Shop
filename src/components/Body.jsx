@@ -16,9 +16,9 @@ const Body= () => {//funcion flecha para indicar que es una funcion
       const [Imagen, setImagen]= useState('')//undifine cuando no hay comillas, con comillas es un vacio
       const [Nombre, setNombre]= useState('');//se esta definiendo el valor gmail
       const [Precio, setPrecio]= useState('');//useState permite manipular los estados de las variables
-      const [Categoria, setCategoria]= useState('');
       const [Descripcion, setDescripcion]= useState('')
       const [update, setUpdate]= useState(0)//para que se actualice una vez subido el producto// solo con el uno se vuelve a cargar todooo
+      
       const [Productos, setProductos] = useState([])
 // y ese use ref khe
 
@@ -42,56 +42,54 @@ const Body= () => {//funcion flecha para indicar que es una funcion
             Swal.fire(
               '¡Eliminado!',
               'Tu archivo ha sido eliminado.',
-              'success'
+              'success',
             );
           }
         });
-        setTimeout(() => {
-          setUpdate(update+1)
-        }, 500);
       };
  
 ////VALIDACION PARA SUBIR PRODUCTO///////////////////////////////////////////////////////////////////////////////////
-        const subir = async (imagen, nombre, precio, Categoria, descripcion)  => {
+        const subir = async (imagen, nombre, precio, descripcion)  => {
   
-          if (imagen ==''|| nombre ==''|| precio =='' || descripcion ==''|| Categoria ==''){ // null puede incluir unun espacio vacio
+          if (imagen ==''|| nombre ==''|| precio =='' || descripcion ==''){ // null puede incluir unun espacio vacio
              alert("Complete los espacios vacios")
 
             }else{
               setTimeout(() => {
                 alert("Publicacion exitosa")
               }, 500);
-              console.log(imagen, nombre, precio, Categoria, descripcion)
 
-              addProduct(imagen, nombre, precio, Categoria, descripcion)
+              addProduct(imagen, nombre, precio, descripcion)
               
               setImagen('')
               setDescripcion('')
               setPrecio('')//forma correcta de vaciar inputs
               setNombre('')
-              setCategoria('')
 
-              setUpdate(update+1)//el mas 1 actualiza el state
+              setUpdate(update+1)//muestra de una vez los productos
             }
           }  
 
-      ///GUARDAR PRODUCTOS/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       const mer = async () => {
 
         const data = await getProductos();//
  
         setProductos(data)
 
+        deleteProducto() //aqui hay un bucle infinito
 
-     
+        setUpdate(update+1)
       }
 
-      useEffect(() => {// un use efect no puede ir dentro/ declarados dentro de funciones
+      useEffect(() => {// un use efect no puede ir dentro/ declarados dentro de funciones // cada vez que cambia el update ejecuta la funcion mer
        
        mer() //una vez subido el codigo  se actualiza el estado con el update par que se muestre de una vez
 
-      }, [update]);//evita que caiga en un bucle infinito.
+      }, [update]);//evita que caiga en un bucle infinito.// se actualiza el update a 1
+
+
+
 
       ////LA FUNCION DELETE ESTA EN UN FETCH//////////////////////////////////////////////////////////////////////////
   
@@ -100,7 +98,7 @@ const Body= () => {//funcion flecha para indicar que es una funcion
 
    const data = await getProductos();
 
-   const categoriaFiltrada = data.filter(prdct => prdct.Categoria === Buscar);//categoria trae el producto
+   const categoriaFiltrada = data.filter(prdct => prdct.Producto.toLowerCase().includes(Buscar.toLowerCase()));//categoria trae el producto
 
    console.log(categoriaFiltrada)
 
@@ -121,9 +119,9 @@ const Body= () => {//funcion flecha para indicar que es una funcion
 
       <div className='publicar'>
       <br />
-      <p className='Ppublicar'>Publicar Producto</p>
+      <p className='Ppublicar'>Buscar Producto</p>
       <br />
-      <input className='navBuscar' type="text" placeholder='Buscar producto' value={Buscar} onChange={(e) => setBuscar (e.target.value.trim())}/>
+      <input className='navBuscar' type="text" placeholder='Buscar producto' value={Buscar} onChange={(e) => setBuscar (e.target.value)}/>
       <br />
       <br />
       <button onClick={filtrados} className='fil'>Buscar</button> 
@@ -138,12 +136,10 @@ const Body= () => {//funcion flecha para indicar que es una funcion
       <br />
       <input className='input_body' type="Precio" placeholder='Precio' value={Precio} onChange={(e) => setPrecio (e.target.value.trim())}/>
       <br />
-      <input className='input_body' type="Categoria" placeholder='Categoria' value={Categoria} onChange={(e) => setCategoria (e.target.value.trim())}/>
-      <br />
       <input className='input_body_descripcion' type="Descripcion" placeholder='Descripcion' value={Descripcion} onChange={(e) => setDescripcion (e.target.value.trim())}/>
       <br /><br />
 
-      <button className='btn_body' onClick={()=> subir(Imagen, Nombre, Precio, Categoria, Descripcion)}>Subir Producto</button>
+      <button className='btn_body' onClick={()=> subir(Imagen, Nombre, Precio, Descripcion)}>Subir Producto</button>
    
 
     </div>
@@ -166,6 +162,7 @@ const Body= () => {//funcion flecha para indicar que es una funcion
                       <div className='bbb' >{producto.Descripcion}</div>
                   </Card.Text> 
                   </Card.Text>
+                  
                   <Edit id={producto.id} nombre={producto.Producto} imagen={producto.Imagen} precio={producto.Precio} descripcion={producto.Descripcion} />
 
                   <button className='edit2' onClick={() => {setUpdate (update +1); handleClick(producto.id)}}>Eliminar</button>

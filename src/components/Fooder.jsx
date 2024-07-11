@@ -22,7 +22,7 @@ const  Footer= () => {//funcion flecha para indicar que es una funcion
         
           </div>
 
-          <div className='fooder2'><br /><br />Términos y condiciones<br />Política de privacidad<br />Política de cookies <br /> Notificaciones de Copyright<br />Configuracion de Cookies <br />Copyright © 2010-2024 Kawaii Gift Shop Todos los derechos reservados. </div>
+          <div className='fooder2'><br />Términos y condiciones<br />Política de privacidad<br />Política de cookies <br /> Notificaciones de Copyright<br />Configuracion de Cookies <br />Copyright © 2010-2024 Kawaii Gift Shop Todos los derechos reservados. </div>
       
           <div className='fooder'><img src={img1} alt="" className="logo-foo" /></div>  
       

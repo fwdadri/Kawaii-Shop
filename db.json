@@ -65,43 +65,25 @@
   ],
   "productos": [
     {
-      "Imagen": "https://i.pinimg.com/originals/8d/5b/fe/8d5bfe42b29a2c4f2b4dc926b45923c6.jpg",
-      "Producto": "Kuromi",
-      "Precio": "15000",
-      "Descripcion": "boka chan ga oshiete kureta irona...",
-      "id": "6cbc"
+      "id": "0f92",
+      "Imagen": "nnn",
+      "Producto": "nnn",
+      "Precio": "nnn",
+      "Descripcion": "nnn"
     },
     {
-      "id": "8dba",
-      "Imagen": "qwerty",
-      "Producto": "wertyu",
-      "Precio": "wertyu",
-      "Descripcion": "qwerty",
-      "Categoria": "wertyu"
+      "Imagen": "https://i.pinimg.com/originals/5c/c5/8e/5cc58e9f0d4c32dbd45e831a84c52e0a.jpg",
+      "Producto": "bbb",
+      "Precio": "100",
+      "Descripcion": "bbbbbbbbbbbbbb",
+      "id": "530d"
     },
     {
-      "id": "f096",
-      "Imagen": "cccc",
-      "Producto": "cccc",
-      "Precio": "ccc",
-      "Descripcion": "cccc",
-      "Categoria": "ccc"
-    },
-    {
-      "id": "796f",
-      "Imagen": "gdgdgfsgssf",
-      "Producto": "dgfshgsfdf",
-      "Precio": "dsfdfdafafdadf",
-      "Descripcion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "Categoria": "ghgdhd"
-    },
-    {
-      "id": "5e0a",
-      "Imagen": "tttt",
-      "Producto": "jjj",
-      "Precio": "jjjjj",
-      "Descripcion": "nknjknkjnk",
-      "Categoria": "jjjjjj"
+      "id": "0697",
+      "Imagen": "https://i.pinimg.com/originals/5c/c5/8e/5cc58e9f0d4c32dbd45e831a84c52e0a.jpg",
+      "Producto": "n",
+      "Precio": "n",
+      "Descripcion": "nnnnnnn"
     }
   ]
 }
