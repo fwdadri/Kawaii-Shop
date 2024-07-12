@@ -2,9 +2,9 @@
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import funko from '../img/funpop.jpg';
-import peluches from '../img/peluches.jpg'
-import tazas from '../img/tazas.jpg'
-import pulseras from '../img/pulseras.jpg'
+import peluches from '../img/hellokitty.jpg'
+import tazas from '../img/pushen.jpg'
+
 
 
 
@@ -45,15 +45,6 @@ function CarruselC() {
 
       </Carousel.Item>
 
-      <Carousel.Item>
-
-        <img
-          className="d-block"
-          src={pulseras}
-          alt="Second slide"
-        />
-        
-      </Carousel.Item>
 
     </Carousel>
     

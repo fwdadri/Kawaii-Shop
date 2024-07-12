@@ -7,7 +7,7 @@ export let addUsuario = async(Gmail, Usuario, Password) => {//es necesario el ta
        method: 'POST',//post empuja/guarda/inserta el contenido
        headers: {//muestra el tipo de contenido que se guarda
        'Content-Type': 'application/json'
-      },//esta volviendo el localhost en un jason para poder ser leidos
+      },//esta vol el localhost en un jason para poder ser leidos
       body: JSON.stringify({// convesion de todo a un string  //body se refiere a todo el contenido
 
         Correo: Gmail,

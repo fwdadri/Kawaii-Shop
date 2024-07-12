@@ -16,10 +16,9 @@ const  Footer= () => {//funcion flecha para indicar que es una funcion
           <div className='fooder-in'>
             
             <p className='fooder-in-c'>Contactanos</p>
-            <p className='fooder-in-p'><img src={what} alt="" className='fooder-img' />   84280351</p>
-            <p className='fooder-in-p'><img src={ins} alt="" className='fooder-img' />  Kawai_iGift_Shop</p>
-            <p className='fooder-in-p'> <img src={google} alt="" className='fooder-img' />  KawaiiGiftShop@gmail.com</p>
-        
+            <a href="https://www.whatsapp.com/?lang=es_LA" className='lin'><p className='fooder-in-p'><img src={what} alt="" className='fooder-img' />   84280351</p></a>
+            <a href="https://www.instagram.com/adriana_cat_uwu/" className='lin'><p className='fooder-in-p'><img src={ins} alt="" className='fooder-img' />  Kawai_iGift_Shop</p></a>
+            <a href="https://www.google.com/intl/es/gmail/about/" className='lin'><p className='fooder-in-p'> <img src={google} alt="" className='fooder-img' />  KawaiiGiftShop@gmail.com</p></a>
           </div>
 
           <div className='fooder2'><br />Términos y condiciones<br />Política de privacidad<br />Política de cookies <br /> Notificaciones de Copyright<br />Configuracion de Cookies <br />Copyright © 2010-2024 Kawaii Gift Shop Todos los derechos reservados. </div>

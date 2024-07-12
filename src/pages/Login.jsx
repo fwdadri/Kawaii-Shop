@@ -48,7 +48,7 @@ const Login = () => {
   return (
 
     <body className='colorrosa'>
-      <div className='form '>
+    <div className='form'>
     
     <div className='img-login'><img src={img1} alt="" className="logo" /></div> 
 
@@ -62,11 +62,11 @@ const Login = () => {
      <br />
 
      <label className='label-login2' htmlFor="">Password</label>
-     <input type={"text"} className='input-login' value={Password_input} onChange={(e) => setPassword_input (e.target.value)} placeholder={'password'} />
+     <input type={"password"} className='input-login' value={Password_input} onChange={(e) => setPassword_input (e.target.value)} placeholder={'password'} />
      <br />
 
-     <button className='btn-login' type='submit'>Entrar Cuenta</button>
-     <br />
+     <button className='btn-login' type='submit'>Entrar</button>
+
 
      <Link className='login-link' to="/register">Ir al Registro</Link>
 

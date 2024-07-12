@@ -61,29 +61,70 @@
       "Correo": "Barryveg12@gmail.com",
       "Nombre": "barryveg",
       "Contrasena": "12345678"
+    },
+    {
+      "id": "6b78",
+      "Correo": "adri@gmail",
+      "Nombre": "",
+      "Contrasena": "adri"
     }
   ],
   "productos": [
     {
-      "id": "0f92",
-      "Imagen": "nnn",
-      "Producto": "nnn",
-      "Precio": "nnn",
-      "Descripcion": "nnn"
+      "Imagen": "https://i.pinimg.com/originals/cb/bc/79/cbbc79f50db84f93b1655f4c80ff4530.png",
+      "Producto": "Peluche Pochita",
+      "Precio": "10.000",
+      "Descripcion": "Peluche Pochita De Anime Chainsaw Men",
+      "id": "7c42"
     },
     {
-      "Imagen": "https://i.pinimg.com/originals/5c/c5/8e/5cc58e9f0d4c32dbd45e831a84c52e0a.jpg",
-      "Producto": "bbb",
-      "Precio": "100",
-      "Descripcion": "bbbbbbbbbbbbbb",
-      "id": "530d"
+      "Imagen": "https://omgkawaii.com/cdn/shop/files/omgkawaii-bunnielight-the-adorable-kawaii-bunny-lamp-40282317226197.jpg?v=1689530535&width=750",
+      "Producto": "Cinnamon Lampara",
+      "Precio": "15.000",
+      "Descripcion": "Cinamon Roll Lampara",
+      "id": "14cf"
     },
     {
-      "id": "0697",
-      "Imagen": "https://i.pinimg.com/originals/5c/c5/8e/5cc58e9f0d4c32dbd45e831a84c52e0a.jpg",
+      "id": "b2cf",
+      "Imagen": "https://i.pinimg.com/originals/93/92/b8/9392b876ab53b112065bbb0a37ec26c9.jpg",
+      "Producto": "Pomporum",
+      "Precio": "10.000",
+      "Descripcion": "bbbbbbbbbbb"
+    },
+    {
+      "id": "c1a9",
+      "Imagen": "https://i.pinimg.com/originals/bd/e7/60/bde7605d17986de3c79a73d6290c7ea7.jpg",
+      "Producto": "PusheenPantuflas",
+      "Precio": "10.000",
+      "Descripcion": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "Imagen": "https://i.pinimg.com/originals/24/a8/1c/24a81cc881992b2dd3d269d9213782f9.jpg",
+      "Producto": "Gato Medias",
+      "Precio": "5.000",
+      "Descripcion": "Medias con estampado de gato",
+      "id": "5161"
+    },
+    {
+      "Imagen": "https://i.pinimg.com/originals/b4/74/81/b47481c86f4c20cfe44929463c101031.jpg",
+      "Producto": "Hello Kitty Bolsa Regalo",
+      "Precio": "nnnnn",
+      "Descripcion": "nnnnnnnnnnnnnnnnnn",
+      "id": "2934"
+    },
+    {
+      "Imagen": "https://i.pinimg.com/originals/99/4e/6f/994e6f9ba5384ded10772b5be1988d3b.jpg",
+      "Producto": "Gato Guantes",
+      "Precio": "6.000",
+      "Descripcion": "nnnnnnnnnnnnnnnnn",
+      "id": "6197"
+    },
+    {
+      "id": "d278",
+      "Imagen": "https://i.pinimg.com/originals/97/02/9d/97029d310bc1680534d1547497b98bc2.jpg",
       "Producto": "n",
       "Precio": "n",
-      "Descripcion": "nnnnnnn"
+      "Descripcion": "nnn"
     }
   ]
 }

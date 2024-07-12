@@ -1,11 +1,6 @@
 
 
 .header {
-    /* display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px; */
     background-color: white;
     color: rgb(216, 50, 189);
     display: flex;
@@ -14,8 +9,7 @@
     height: 160px;
     margin-top: -10px;
     margin-left:-8px ;
-    /* width: 106%; */
-    width: 100%;
+    width: 100.6%;
 }
 
 .admi {
@@ -49,7 +43,7 @@
 }
 .publicar{
     background-color: white;
-    height: 730px;
+    height: 500px;
     width: 300px;
     border-radius: 10px;
     margin-left: 3%;
@@ -105,7 +99,7 @@
     height: 730px;
     border-radius: 10px;
     margin-left: 27%;
-    margin-top: -754px;
+    margin-top: -525px;
     background: white;
     overflow: auto;
     word-wrap: break-word;
@@ -121,7 +115,7 @@
     background-color: white;
     height:180px;
     text-align: center;
-    width: 100%;
+    width: 100.6%;
     height: 210px;
     margin-top: 10px;
     margin-left:-8px
@@ -320,7 +314,7 @@
 }
 
 .dia{
-margin-left: 80px;
+    margin-left: 80px;
 }
 .ti{
     text-align: center;
@@ -340,4 +334,15 @@ margin-left: 80px;
 .imver{
     width: 300px;
     margin-left: -250px;
+}
+
+.lin{
+    text-decoration: none;
+    color: rgb(214, 33, 187);
+}
+
+.exit{
+    width: 45px;
+    margin-left: 10px;
+    margin-top: -5px;
 }

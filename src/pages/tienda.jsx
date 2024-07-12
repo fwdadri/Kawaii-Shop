@@ -12,25 +12,25 @@ import Card from 'react-bootstrap/Card';
 
 const Tienda= () => {//funcion flecha para indicar que es una funcion
 
+  const [Productos, setProductos] = useState([]);
+  const [Buscar, setBuscar]= useState('');
 
-  const [Productos, setProductos] = useState([]);  //que esta pasando aquiiiii?  
-  
-  
-  const objetos = async () => {
 
-    let product = await getProductos()
-    setProductos(product)//un await no puede ir dentro de un useEffect 
+  const filtrados = async () => {
 
-    //setProductos(dataProductos)
-  }
+    const data = await getProductos();
+    const categoriaFiltrada = data.filter(prdct => prdct.Producto.toLowerCase().includes(Buscar.toLowerCase()));//categoria trae el producto
+    setProductos(categoriaFiltrada);
+   };
 
-  objetos()
 
-  useEffect(() => {// un use efect no puede ir dentro/ declarados dentro de funciones
+   useEffect(() => {//matiene todo actualizado
 
-    console.log(Productos);
+    filtrados()
+    
+   },[])
+   
 
-   },[Productos]);
 
 
   return(   
@@ -48,8 +48,17 @@ const Tienda= () => {//funcion flecha para indicar que es una funcion
         <h2>Envoltorios</h2>
 
        </div>
-
-
+<br />
+<div className='buscando'>
+<br />
+<p className='vv'>Buscar: 
+  <input className='navBuscar2' type="text" placeholder='Buscar producto' value={Buscar} onChange={(e) =>setBuscar(e.target.value)}/>
+</p>
+<button onClick={filtrados} className='filtr'>buscar</button>
+<br />
+<br />
+</div>
+<br />
        <div className='tiendaPrincipal'>
         <div className='grid2'>
 
