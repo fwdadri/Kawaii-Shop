@@ -6,15 +6,16 @@ const Ver = ({imagen, nombre, precio, descripcion}) => {
     const [inputPrecio] = useState(precio);
     const [inputImagen] = useState(imagen);
     const [inputDescripcion] = useState(descripcion);
+    
     const editRef = useRef()
 
-//ok ya entendi de donde salieron esos ref //pero donde esta useref? esta importada
+   //ok ya entendi de donde salieron esos ref //pero donde esta useref? esta importada
 
-  const show = () =>{
+   const show = () =>{
 
    editRef.current.showModal()
 
-  }
+   }
 
   const cerrar = () => {
 
@@ -27,9 +28,10 @@ const Ver = ({imagen, nombre, precio, descripcion}) => {
 
   <>
   <dialog ref={editRef} className="dialog2">
+    <button className='btnclose2' onClick={cerrar}>cerrar</button>
   <br />    
 
-  <h5 className='ti'>Kawaii Gift Shop</h5>
+  <h5 className='ti'>Kawaii Gift Shop</h5>  
 
   <br /> 
   <br />
@@ -43,10 +45,10 @@ const Ver = ({imagen, nombre, precio, descripcion}) => {
   <p className='dia2'>{inputPrecio}</p>
   <br />
   <p className='dia2'>{inputDescripcion}</p>
-  <br /><br /> 
+  <br /><br />
   <button className='edibtn2'>Añadir a Canasta</button>
 
-   </div>    <button className='btnclose2' onClick={cerrar}>cerrar</button>
+   </div>    
   </dialog>
 
    <button className='btnEli' onClick={show} >Ver</button>

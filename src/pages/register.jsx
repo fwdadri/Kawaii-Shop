@@ -18,7 +18,7 @@ const Register = () => {
 
     event.preventDefault();
 
-    if (Gmail != null && Usuario != null && Password != null) { // null puede incluir unun espacio vacio
+    if (Gmail != null && Usuario != null && Password != null) { //null puede incluir unun espacio vacio, si la persona escribe deja de ser nulo
      
       const usuarios = await getUsuarios()// como traigo la data del api?Tenia qu crear un jason server//ifgual como hago para recorrer la lista en el local host?
 
@@ -65,13 +65,13 @@ const Register = () => {
  <br />
 
  <label className='label-register3' htmlFor="">Password</label>
- <input type={"text"} className='input-register' value={Password} onChange={(e) => setPassword (e.target.value.trim())} placeholder={'password'} />
+ <input type={"password"} className='input-register' value={Password} onChange={(e) => setPassword (e.target.value.trim())} placeholder={'password'} />
  <br />
  
  <button className='btn-register' type='submit'>Crear Cuenta</button>
 
  <Link className='register-link' to="/">Ir a cuenta</Link>
-<br /><br /><br /><br />
+<br /><br /><br />
 </form>
 </div>
 <br /><br /><br />

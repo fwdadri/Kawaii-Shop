@@ -3,7 +3,6 @@ import {useEffect, useState} from 'react'
 import { addProduct} from '../servers/fetch';
 import { getProductos}  from '../servers/fetch';
 import {deleteProducto} from '../servers/fetch'
-
 import Card from 'react-bootstrap/Card';
 import Edit from './modal/edit';
 
@@ -17,12 +16,12 @@ const Body= () => {//funcion flecha para indicar que es una funcion
       const [Nombre, setNombre]= useState('');//se esta definiendo el valor gmail
       const [Precio, setPrecio]= useState('');//useState permite manipular los estados de las variables
       const [Descripcion, setDescripcion]= useState('')
+
       const [update, setUpdate]= useState(0)//para que se actualice una vez subido el producto// solo con el uno se vuelve a cargar todooo
       
       const [Productos, setProductos] = useState([])
-// y ese use ref khe
 
-      const [Buscar, setBuscar]= useState('');
+
 
       const handleClick = (id) => {//ahora hace la funcion de delete
         Swal.fire({
@@ -49,7 +48,8 @@ const Body= () => {//funcion flecha para indicar que es una funcion
       };
  
 ////VALIDACION PARA SUBIR PRODUCTO///////////////////////////////////////////////////////////////////////////////////
-        const subir = async (imagen, nombre, precio, descripcion)  => {
+       
+const subir = async (imagen, nombre, precio, descripcion)  => {
   
           if (imagen ==''|| nombre ==''|| precio =='' || descripcion ==''){ // null puede incluir unun espacio vacio
              alert("Complete los espacios vacios")
@@ -66,46 +66,21 @@ const Body= () => {//funcion flecha para indicar que es una funcion
               setPrecio('')//forma correcta de vaciar inputs
               setNombre('')
 
-              setUpdate(update+1)//muestra de una vez los productos
             }
           }  
-
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       const mer = async () => {
 
         const data = await getProductos();//
- 
         setProductos(data)
-
-        deleteProducto() //aqui hay un bucle infinito
-
         setUpdate(update+1)
       }
 
-      useEffect(() => {// un use efect no puede ir dentro/ declarados dentro de funciones // cada vez que cambia el update ejecuta la funcion mer
-       
+      useEffect(() => {// un use efect no puede ir declarados dentro de funciones // cada vez que cambia el update ejecuta la funcion mer
+       //aqui va la funcion a ejecutar
        mer() //una vez subido el codigo  se actualiza el estado con el update par que se muestre de una vez
 
-      }, [update]);//evita que caiga en un bucle infinito.// se actualiza el update a 1
-
-
-
-
-      ////LA FUNCION DELETE ESTA EN UN FETCH//////////////////////////////////////////////////////////////////////////
-  
-   const filtrados = async () => {
-
-
-   const data = await getProductos();
-
-   const categoriaFiltrada = data.filter(prdct => prdct.Producto.toLowerCase().includes(Buscar.toLowerCase()));//categoria trae el producto
-
-   console.log(categoriaFiltrada)
-
-   setProductos(categoriaFiltrada);
-};
-
-
+      }, [update]);//see ejecutacada vez que cambia el update
 
 
 //como renderizar//estudiar proof y 
@@ -118,16 +93,8 @@ const Body= () => {//funcion flecha para indicar que es una funcion
     <br />
 
       <div className='publicar'>
-      <br />
-      <p className='Ppublicar'>Buscar Producto</p>
-      <br />
-      <input className='navBuscar' type="text" placeholder='Buscar producto' value={Buscar} onChange={(e) => setBuscar (e.target.value)}/>
-      <br />
-      <br />
-      <button onClick={filtrados} className='fil'>Buscar</button> 
-      <br />
-      <br /> 
-      <hr />       
+     <br />
+     <br />
       <p className='Ppublicar'>Publicar Producto</p>
       <br />
       <input className='input_body' type='img' placeholder='img' value={Imagen} onChange={(e) => setImagen (e.target.value.trim())}></input>
@@ -138,10 +105,7 @@ const Body= () => {//funcion flecha para indicar que es una funcion
       <br />
       <input className='input_body_descripcion' type="Descripcion" placeholder='Descripcion' value={Descripcion} onChange={(e) => setDescripcion (e.target.value.trim())}/>
       <br /><br />
-
       <button className='btn_body' onClick={()=> subir(Imagen, Nombre, Precio, Descripcion)}>Subir Producto</button>
-   
-
     </div>
     <br />
 
@@ -165,7 +129,7 @@ const Body= () => {//funcion flecha para indicar que es una funcion
                   
                   <Edit id={producto.id} nombre={producto.Producto} imagen={producto.Imagen} precio={producto.Precio} descripcion={producto.Descripcion} />
 
-                  <button className='edit2' onClick={() => {setUpdate (update +1); handleClick(producto.id)}}>Eliminar</button>
+                  <button className='edit2' onClick={() => {handleClick(producto.id)}}>Eliminar</button>
                 </Card.Body >
               </Card>
         </div>
